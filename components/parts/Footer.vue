@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <img src="@/assets/img/svg/devfactoryLogo.svg" alt="logo" />
+    <img src="@/assets/img/svg/footer-logo.svg" alt="logo" />
     <span>© 2022 DevFactory. Powered by Sastec.</span>
     <div class="contact">
       <img src="@/assets/img/svg/email.svg" alt="" />
@@ -16,11 +16,7 @@ footer {
   width: 100%;
   color: $light;
 
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 1.5rem;
-  letter-spacing: 0;
+   @include small-text;
   .contact {
     img:first-child {
       margin-right: 10px;
