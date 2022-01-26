@@ -4,17 +4,11 @@
   </div>
 </template>
 
-<script>
-export default {
-};
-</script>
-
 <style lang="scss">
-.home{
-  @include center-element;
-  .title{
+.home {
+  @include flex-center;
+  .title {
     color: $primary;
-    
   }
 }
 </style>
