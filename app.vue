@@ -1,7 +1,11 @@
-
 <template>
-    <NuxtPage /> 
+  <Html>
+    <Head>
+      <Title>devfactory</Title>
+      <Link rel="icon" type="image/x-icon" href="/favicon .ico" />
+    </Head>
+  </Html>
+  <NuxtPage />
 </template>
 
-<script setup lang="ts">
-</script>
+<script lang="ts"></script>
