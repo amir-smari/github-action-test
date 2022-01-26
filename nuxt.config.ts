@@ -1,7 +1,16 @@
-import { defineNuxtConfig } from 'nuxt3'
+import { defineNuxtConfig } from "nuxt3";
 
 export default defineNuxtConfig({
-  modules: [
-    '@nuxt/ui'
-  ]
-})
+  modules: [],
+  // Global CSS: https://go.nuxtjs.dev/config-css
+  css: ["@/assets/main.css"],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@import "@/assets/scss/variables.scss";@import "@/assets/scss/mixins.scss";',
+        },
+      },
+    },
+  },
+});

@@ -1,13 +1,20 @@
 <template>
-<h1>HOME PAGE</h1>
-
-
+  <div class="home">
+    <h1 class="title">HOME PAGE</h1>
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'index'
-}
+};
 </script>
 
-<style></style>
+<style lang="scss">
+.home{
+  @include center-element;
+  .title{
+    color: $primary;
+    
+  }
+}
+</style>
