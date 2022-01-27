@@ -6,21 +6,38 @@
       alt="problematic"
       class="problematic-img"
     />
-    <ContactSection/>
+    <RegisterSection />
+    <AboutSection />
+    <img
+      src="@/assets/img/png/code-editor.png"
+      alt="problematic"
+      class="problematic-img"
+    />
+    <MindmapSection/>
+    <BannerSection/>
+    
   </div>
 </template>
 <script>
-import WelcomeSection from "@/components/main-home/WelcomeSection.vue";
-import ContactSection from '~/components/main-home/ContactSection.vue';
+import WelcomeSection from "@/components/mainHome/WelcomeSection.vue";
+import RegisterSection from "@/components/mainHome/RegisterSection.vue";
+import AboutSection from "@/components/mainHome/AboutSection.vue";
 
-export default {
+import MindmapSection from "@/components/mainHome/MindmapSection.vue";
+import BannerSection from "~/components/mainHome/BannerSection.vue";
+
+
+export default defineComponent({
   components: {
     WelcomeSection,
-    ContactSection,
-  },
-};
+    RegisterSection,
+    AboutSection,
+    MindmapSection,
+    BannerSection
+},
+});
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .problematic-img {
   width: 100%;
   margin: auto;

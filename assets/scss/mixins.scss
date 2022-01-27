@@ -26,7 +26,6 @@
 }
 
 @mixin small-text {
-
   font-size: 1rem;
   font-style: normal;
   font-weight: 600;
@@ -54,12 +53,22 @@
 }
 
 @mixin btn {
-    padding: 15px;
-    border: none;
-    outline: none;
-    border-radius: 7px;
-    @include small-text;
-    font-weight: 500;
-    @include flex-center;
-    cursor: pointer;
+  padding: 15px;
+  border: none;
+  outline: none;
+  border-radius: 7px;
+  @include small-text;
+  font-weight: 500;
+  @include flex-center;
+  cursor: pointer;
+}
+
+@mixin input {
+  height: 45px;
+  border-radius: 6px;
+  width: 290px;
+  background: $input-bg;
+  outline: none;
+  border: none;
+  padding-left: 13px;
 }

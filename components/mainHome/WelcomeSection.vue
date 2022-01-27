@@ -16,9 +16,7 @@
     <img src="@/assets/img/png/community.png" alt="community" />
   </div>
 </template>
-<script>
-export default {};
-</script>
+
 <style lang="scss" scoped>
 .welcome-section {
   background-image: url("@/assets/img/png/community-bg.png");

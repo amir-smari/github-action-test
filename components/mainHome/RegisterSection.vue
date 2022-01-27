@@ -1,13 +1,13 @@
 <template lang="">
-  <div class="contact-section">
-    <div class="contact-section__title">
+  <div class="register-section">
+    <div class="register-section__title">
       Estimez le temps de développement et le coût de votre projet
     </div>
     <button class="outline__btn">
       <span> Accédez à votre éditeur de CDC</span>
       <img src="@/assets/img/svg/arrow.svg" alt="arrow" />
     </button>
-    <div class="contact-section__form">
+    <div class="register-section__form">
       <span class="form-title"
         >Version Saas disponible en <span>avril 2022</span>, soyez les premiers
         !
@@ -24,8 +24,8 @@
 </template>
 
 <style lang="scss" scoped>
-.contact-section {
-  background-image: url("@/assets/img/png/contact-bg.png");
+.register-section {
+  background-image: url("@/assets/img/png/register-bg.png");
   background-size: 100vw 100%;
   background-repeat: no-repeat;
   text-align: center;
@@ -34,7 +34,7 @@
   margin: 30px auto;
   height: 400px;
   padding-top: 4%;
-  .contact-section__title {
+  .register-section__title {
     @include meduim-text;
     font-weight: 600;
   }
@@ -44,7 +44,7 @@
     @include btn;
     margin: 26px auto;
   }
-  .contact-section__form {
+  .register-section__form {
     width: 80%;
     margin: auto;
     background: $light;
@@ -78,24 +78,18 @@
         color: $light;
       }
       input {
-        height: 45px;
-        border-radius: 6px;
-        width: 290px;
-        background: $input-bg;
-        outline: none;
-        border: none;
-        padding-left: 13px;
+       @include input;
       }
     }
   }
 }
 @media screen and (max-width: $medium) {
-  .contact-section {
+  .register-section {
     .outline__btn {
       padding: 12px;
     }
-    .contact-section__form {
-      .contact-section__title {
+    .register-section__form {
+      .register-section__title {
         @include small-text;
       }
       .form-title {
@@ -113,6 +107,14 @@
           margin-top: 15px;
         }
       }
+    }
+  }
+}
+@media screen and (max-width: $small) {
+  .register-section {
+    .form-title {
+      font-size: 1rem !important;
+      line-height: 1.5rem !important;
     }
   }
 }
