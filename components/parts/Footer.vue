@@ -1,6 +1,8 @@
 <template>
   <footer>
-    <img src="@/assets/img/svg/footer-logo.svg" alt="logo" />
+    <div>
+      <img src="@/assets/img/svg/footer-logo.svg" alt="logo" />
+    </div>
     <span>© 2022 DevFactory. Powered by Sastec.</span>
     <div class="contact">
       <img src="@/assets/img/svg/email.svg" alt="" />
@@ -10,7 +12,10 @@
 </template>
 <style lang="scss">
 footer {
-  @include flex-around;
+  // @include flex-around;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
   background: $primary;
   height: 80px;
   width: 100%;
@@ -30,6 +35,7 @@ footer {
     flex-direction: column;
     height: auto;
     padding:15px;
+    
   }
 }
 </style>

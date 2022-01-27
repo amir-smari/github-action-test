@@ -5,7 +5,7 @@
       <div class="title">Workflows Automation Platform</div>
     </div>
     <div class="welcome-section__content">
-      <div>Un game changer pour vos développements web</div>
+      <span>Un game changer pour vos développements web</span>
       <span
         >"500 fonctionnalités font aujourd’hui 80 % de tous les développements
         informatiques. Il est donc possible de proposer des solutions
@@ -29,7 +29,7 @@ export default {};
   height: 765px;
 
   .welcome-section__header {
-    padding: 60px;
+    padding: 30px;
     @include flex-center;
     flex-direction: column;
     @include meduim-text;
@@ -41,6 +41,7 @@ export default {};
     text-align: justify;
     width: 50%;
     margin: auto;
+    color:$grey3;
     @include large-text;
     span {
       @include small-text;

@@ -1,5 +1,10 @@
-$primary: if(isDarkMode(), #8950fc, #7239ea);
+$primary: #7239EA;
+
 $light:#fff;
+$dark:#181C32;
+$grey3:#5E6278;
+$input-bg: #E9ECEF;
+
 @font-face {
     font-family: Poppins;
     src: url('../fonts/poppins-light-webfont.woff2') format("woff2"),;
