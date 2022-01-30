@@ -1,9 +1,11 @@
+ @import './fonts/poppins/stylesheet.css';
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Poppins;
+    font-family: "Poppins";
+   
 }
 body{
-    background: #E5E5E5;
+    background: #F5F8FA;
 }

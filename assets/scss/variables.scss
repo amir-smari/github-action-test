@@ -1,16 +1,17 @@
-$primary: #7239EA;
+//colors
+$primary: #7239ea;
+$light: #fff;
+$light1:#F5F8FA;
+$dark: #181c32;
+$grey3: #5e6278;
+$input-bg: #e9ecef;
+$grey2: #3f4254;
+$grey1: #181c32;
+$grey11:#181c3210;
+$grey04:#181c3240;
+$dark01:#00000010;
 
-$light:#fff;
-$dark:#181C32;
-$grey3:#5E6278;
-$input-bg: #E9ECEF;
-$grey2:#3F4254;
-
-@font-face {
-    font-family: Poppins;
-    src: url('../fonts/poppins-light-webfont.woff2') format("woff2"),;
-}
-
-
-$small: 600px;
-$medium: 1020px;
+//breakpoints
+$md: 768px;
+$sm: 600px;
+$lg: 1020px;

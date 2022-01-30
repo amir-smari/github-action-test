@@ -27,20 +27,40 @@
   flex-direction: column;
   text-align: center;
   span {
-    @include meduim-text;
+    font-family: "Poppins-medium";
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: 0px;
+    text-align: center;
+
     margin: 2% auto;
   }
   p {
-    @include small-text;
+    width: 65%;
+    font-size: 1.29rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+    letter-spacing: 0px;
+    text-align: center;
   }
   color: $light;
   .btns__wrapper {
-    margin-top: 2%;
+    margin-top: 3%;
     @include flex-center;
     column-gap: 10px;
     .primary__btn {
       @include btn;
-      @include small-text;
+      padding: 16px;
+      font-size:1.31rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 26px;
+      letter-spacing: 0em;
+      text-align: center;
+
       color: $grey2;
     }
   }
@@ -62,8 +82,8 @@
       @include flex-center;
       flex-direction: column;
       row-gap: 10px;
-      .primary__btn{
-          padding: 8px;
+      .primary__btn {
+        padding: 8px;
       }
     }
   }

@@ -3,10 +3,12 @@
     <div class="register-section__title">
       Estimez le temps de développement et le coût de votre projet
     </div>
-    <button class="outline__btn">
-      <span> Accédez à votre éditeur de CDC</span>
-      <img src="@/assets/img/svg/arrow.svg" alt="arrow" />
-    </button>
+    <a href="#mindmap">
+      <button class="outline__btn">
+        <span> Accédez à votre éditeur de CDC</span>
+        <img src="@/assets/img/svg/arrow.svg" alt="arrow" />
+      </button>
+    </a>
     <div class="register-section__form">
       <span class="form-title"
         >Version Saas disponible en <span>avril 2022</span>, soyez les premiers
@@ -34,15 +36,26 @@
   margin: 30px auto;
   height: 400px;
   padding-top: 4%;
+  a {
+    text-decoration: none;
+  }
   .register-section__title {
-    @include meduim-text;
+    //styleName: SemiBold/H2-SB;
+    font-family: "Poppins-semibold";
+    font-size: 1.5rem;
+    font-style: normal;
     font-weight: 600;
+    line-height: 36px;
+    letter-spacing: 0px;
+    text-align: center;
   }
   .outline__btn {
     color: $primary;
     background: $light;
     @include btn;
+    @include small-text;
     margin: 26px auto;
+    font-weight: 600 !important;
   }
   .register-section__form {
     width: 80%;
@@ -51,19 +64,32 @@
     color: $dark;
     @include flex-center;
     flex-direction: column;
-    margin-top: 30px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    margin-top: 65px;
+    box-shadow: 0px 10px 20px $dark01;
     border-radius: 12px;
-    padding-top: 3%;
+    padding: 3%;
     .form-title {
-      @include large-text;
-      font-weight: 700;
+      font-family: "Poppins-medium";
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 3rem;
+      letter-spacing: 0px;
       span {
+        font-family: "Poppins-bold";
         color: $primary;
+        font-weight: 700;
       }
     }
     .form-title-muted {
-      @include small-text;
+      font-family: "Poppins-medium";
+      font-size: 1.05rem;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 26px;
+      letter-spacing: 0px;
+      text-align: center;
+
       color: $grey3;
     }
     .form__wrapper {
@@ -73,25 +99,32 @@
       margin-bottom: 3%;
       .primary__btn {
         @include btn;
-        padding: 9px;
+        padding: 12px;
         background: $primary;
         color: $light;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: center;
       }
       input {
-       @include input;
+        @include input;
       }
     }
   }
 }
-@media screen and (max-width: $medium) {
+@media screen and (max-width: $lg) {
   .register-section {
+    .register-section__title {
+      @include small-text;
+    }
     .outline__btn {
-      padding: 12px;
+      padding: 9px;
+      @include x-small-text;
     }
     .register-section__form {
-      .register-section__title {
-        @include small-text;
-      }
       .form-title {
         @include meduim-text;
       }
@@ -110,11 +143,18 @@
     }
   }
 }
-@media screen and (max-width: $small) {
+@media screen and (max-width: $sm) {
   .register-section {
-    .form-title {
-      font-size: 1rem !important;
-      line-height: 1.5rem !important;
+    .register-section__form {
+      .form__wrapper {
+        .primary__btn input {
+          width: 270px;
+        }
+      }
+      .form-title {
+        font-size: 1rem !important;
+        line-height: 1.5rem !important;
+      }
     }
   }
 }

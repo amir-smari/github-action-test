@@ -5,11 +5,12 @@
         <div class="about__content">
           <p>
             Que vous soyez une Start Up, un éditeur ou bien un entrepreneur,
-            nous avons La Solution pour développer vos applications web.
+            nous avons <strong>La Solution</strong> pour développer vos
+            applications web.
           </p>
           <p>
-            Engagez vos partenaires : Concevez plus rapidement votre prototype,
-            étape clé pour une levée de fonds.
+            <strong>Engagez vos partenaires : </strong> Concevez plus rapidement
+            votre prototype, étape clé pour une levée de fonds.
           </p>
         </div>
         <img src="@/assets/img/png/award.png" alt="award" class="about__img" />
@@ -42,11 +43,19 @@
           vitae aenean nec. Nec fringilla egestas pellentesque pretium, ultrices
           viverra.
         </div>
-        <img src="@/assets/img/png/overview.png" alt="overview" class="about__img" />
+        <img
+          src="@/assets/img/png/overview.png"
+          alt="overview"
+          class="about__img"
+        />
       </div>
 
       <div class="about__wrapper">
-        <img src="@/assets/img/png/dashboard.png" alt="dashboard" class="about__img" />
+        <img
+          src="@/assets/img/png/dashboard.png"
+          alt="dashboard"
+          class="about__img"
+        />
         <div class="about__content detail">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum rhoncus
           sed non libero convallis maecenas amet arcu, elit. Enim eget blandit
@@ -77,10 +86,21 @@
       }
       .about__content {
         width: 33%;
-        @include meduim-text;
-        font-weight: 800;
+        color: $grey1;
+        font-family: "Poppins-semibold";
+        font-size: 1.3rem;
+        font-style: normal;
+        font-weight: 600;
         line-height: 39px;
-        text-align: justify;
+        letter-spacing: 0px;
+        text-align: left;
+        strong {
+          font-family: "Poppins-bold";
+          font-weight: 800;
+          font-size: 1.5rem;
+          font-style: bold;
+        }
+
         .primary__btn {
           @include btn;
           background: $primary;
@@ -90,7 +110,7 @@
         }
       }
 
-      .detail{
+      .detail {
         @include small-text;
         text-align: justify;
         font-weight: 400;
@@ -98,7 +118,7 @@
     }
   }
 }
-@media screen and (max-width: $medium) {
+@media screen and (max-width: $lg) {
   .about-section {
     .about {
       .about__wrapper:first-child {
@@ -118,21 +138,26 @@
     }
   }
 }
-@media screen and (max-width: $small) {
+@media screen and (max-width: $sm) {
   .about-section {
     margin-top: 40%;
     .about {
       .about__wrapper {
         margin: 60px auto;
         .about__img {
-          width: 80%;
+          width: 70%;
         }
         .about__content {
           @include small-text;
           text-align: center;
+          .primary__btn {
+            margin-top: 15px;
+            padding: 8px;
+          }
         }
-        .detail{
+        .detail {
           @include x-small-text;
+          margin-top: 15px;
         }
       }
     }

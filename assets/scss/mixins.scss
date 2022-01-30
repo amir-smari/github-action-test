@@ -16,6 +16,12 @@
   justify-content: space-between;
 }
 
+@mixin flex-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
 @mixin meduim-text {
   font-size: 1.5rem;
   font-style: normal;
@@ -47,7 +53,7 @@
   font-size: 0.8rem;
   font-style: normal;
   font-weight: 400;
-  line-height: 0.8rem;
+  line-height: 1rem;
   letter-spacing: 0px;
   text-align: center;
 }

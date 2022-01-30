@@ -5,15 +5,8 @@
     <Footer/>
   </div>
 </template>
-<script lang='ts'>
-import Header from "@/components/parts/Header.vue";
-import Footer from "@/components/parts/Footer.vue";
-
-export default {
-  components: {
-    Header,
-    Footer
-  },
-};
+<script lang='ts' setup>
+import Header from "@/layouts/parts/Header.vue";
+import Footer from "@/layouts/parts/Footer.vue";
 </script>
 
