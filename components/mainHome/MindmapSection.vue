@@ -1,12 +1,10 @@
 <template>
   <div id="mindmap" class="mindmap-section">
     <div class="mindmap__content">
-      Estimez le temps de développement et le prix de votre solution grâce à
-      notre éditeur de cahier des charges nouvelle génération basée sur la
-      méthode WBS
+      {{ $t("mindMap.title") }}
     </div>
     <img src="@/assets/img/png/mindmap.png" alt="mindmap" />
-    <button class="primary__btn">Démarrez votre CDC</button>
+    <button class="primary__btn">{{ $t("mindMap.startYourCdc") }}</button>
   </div>
 </template>
 <style lang="scss" scoped>

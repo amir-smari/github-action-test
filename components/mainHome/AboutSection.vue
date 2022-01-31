@@ -4,13 +4,13 @@
       <div class="about__wrapper">
         <div class="about__content">
           <p>
-            Que vous soyez une Start Up, un éditeur ou bien un entrepreneur,
-            nous avons <strong>La Solution</strong> pour développer vos
-            applications web.
+            {{ $t("about.WhetherYouAre") }}, {{ $t("about.weHave") }}
+            <strong>{{ $t("about.solution") }}</strong>
+            {{ $t("about.developApplication") }}.
           </p>
           <p>
-            <strong>Engagez vos partenaires : </strong> Concevez plus rapidement
-            votre prototype, étape clé pour une levée de fonds.
+            <strong> {{ $t("about.engagezVosPartenaires") }} : </strong>
+            {{ $t("about.designYourPrototype") }}
           </p>
         </div>
         <img src="@/assets/img/png/award.png" alt="award" class="about__img" />
@@ -21,10 +21,10 @@
       <div class="about__wrapper">
         <img src="@/assets/img/png/stats.png" alt="stats" class="about__img" />
         <div class="about__content">
-          DevFactory est une plateforme d’automatisation des workflows, axée
-          autour d’une méthodologie innovante de programmation
+          {{ $t("about.devFactoryIsWorkflow") }}
+
           <button class="primary__btn">
-            <span> En savoir plus </span>
+            <span> {{ $t("about.learnMore") }} </span>
             <img src="@/assets/img/svg/light-arrow.svg" alt="arrow" />
           </button>
         </div>

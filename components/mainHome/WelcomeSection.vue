@@ -5,16 +5,13 @@
     <img src="@/assets/img/svg/hexagone.svg" alt="hexagone" class="hexagone" />
     <div class="welcome-section__header">
       <img src="@/assets/img/svg/header-logo.svg" alt="logo" />
-      <div class="title">Workflows Automation Platform</div>
+      <div class="title">{{ $t("welcome.workflowsAutomationPlatform") }}</div>
     </div>
     <div class="welcome-section__content">
-      <p>Programmez autrement, développez plus rapidement</p>
-      <span
-        >“500 fonctionnalités font aujourd’hui 80% de tous les développements
-        informatiques. Il est donc possible de proposer des solutions
-        d’automatisation qui feront gagner un temps considérable aux
-        développeurs”.</span
-      >
+      <p>{{ $t("welcome.title") }}</p>
+      <span>
+        <q> {{ $t("welcome.description") }}</q>
+      </span>
     </div>
     <img src="@/assets/img/png/community.png" alt="community" />
   </div>

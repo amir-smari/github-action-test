@@ -1,6 +1,6 @@
 <template>
   <header>
-    <div>Version Saas disponible en avril 2022, soyez les premiers !</div>
+    <div>{{ $t("headerAnnouncement") }} !</div>
   </header>
 </template>
 

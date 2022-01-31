@@ -2,17 +2,12 @@
   <div class="banner-section">
     <img src="@/assets/img/svg/studio-logo.svg" alt="logo" />
     <span>
-      Un manque de ressources pour développer? Des aléas techniques sur votre
-      projet?
+      {{ $t("banner.lackOfResources") }} ? {{ $t("banner.technicalHazard") }} ?
     </span>
-    <p>
-      Accélérez vos développements : Bénéficiez de la puissance de la plateforme
-      DevFactory, de ressources dédiées et de notre expertise en nouvelles
-      technologies !
-    </p>
+    <p>{{ $t("banner.description") }} !</p>
     <div class="btns__wrapper">
-      <button class="primary__btn">Découvrir l’offre</button>
-      <button class="primary__btn">Voir le Business case</button>
+      <button class="primary__btn">{{ $t("banner.discoverTheOffer") }}</button>
+      <button class="primary__btn">{{ $t("banner.businessCase") }}</button>
     </div>
   </div>
 </template>
