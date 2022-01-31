@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <!-- <Language /> -->
     <WelcomeSection />
     <img
       src="@/assets/img/png/problematic.png"
@@ -30,6 +31,7 @@ import AboutSection from "@/components/mainHome/AboutSection.vue";
 import MindmapSection from "@/components/mainHome/MindmapSection.vue";
 import BannerSection from "@/components/mainHome/BannerSection.vue";
 import ContactSection from "@/components/mainHome/ContactSection.vue";
+// import Language from "~/components/LanguageComponent.vue";
 const scrollToTop = () => {
   window.scrollTo(0, 0);
 };

@@ -1,7 +1,8 @@
+import type { IntlifyModuleOptions } from "@intlify/nuxt3";
 import { defineNuxtConfig } from "nuxt3";
 
 export default defineNuxtConfig({
-  modules: [],
+  buildModules: ["@intlify/nuxt3"],
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ["@/assets/main.css"],
   vite: {
@@ -15,3 +16,9 @@ export default defineNuxtConfig({
     },
   },
 });
+
+declare module "@nuxt/schema" {
+  export interface NuxtConfig {
+    intlify?: IntlifyModuleOptions;
+  }
+}
