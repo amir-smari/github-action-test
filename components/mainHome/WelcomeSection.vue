@@ -1,8 +1,9 @@
 <template>
   <div class="welcome-section">
     <img src="@/assets/img/svg/circle.svg" alt="circle" class="circle" />
-    <img src="@/assets/img/svg/disque.svg" alt="disque" class="disque" />
-    <img src="@/assets/img/svg/hexagone.svg" alt="hexagone" class="hexagone" />
+    <div class="disque"></div>
+    <div class="hexagone"></div>
+    <!-- <img src="@/assets/img/svg/hexagone.svg" alt="hexagone" class="hexagone" /> -->
     <div class="semi-circle"></div>
 
     <div class="welcome-section__content">
@@ -32,10 +33,16 @@
   background-color: #fff;
   height: 90vh;
   position: relative;
+  clip-path: ellipse(123% 100% at 50% 0%);
   .disque {
     position: absolute;
     bottom: 20%;
     right: 15%;
+    background-color: #7239ea;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
   .circle {
     position: absolute;
@@ -46,6 +53,9 @@
     position: absolute;
     left: 15%;
     top: 20%;
+    background-image: url("@/assets/img/svg/hexagone.svg");
+    width: 7rem;
+    height: 7rem;
   }
   .semi-circle {
     position: absolute;
