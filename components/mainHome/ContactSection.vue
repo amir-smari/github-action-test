@@ -62,8 +62,8 @@
     box-shadow: 0px 3px 12px -1px $grey04, 0px 2px 4px -1px $grey11;
     .contact-form {
       background: $light;
-      width: 60%;
-      padding: 6%;
+      flex-grow: 1;
+      padding: 2rem 3rem;
       .form__title {
         font-family: "Poppins-semibold";
         font-size: 1.18rem;
@@ -105,14 +105,17 @@
     }
     .contact-info {
       background: $primary;
-      width: 40%;
-      padding-left: 6%;
-      padding-top: 10%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 3rem;
+      padding-right: 10rem;
+      gap: 2rem;
       .info__property {
         flex-direction: column;
         @include flex-start;
         align-items: flex-start;
-        margin-bottom: 35px;
         text-align: start;
 
         .info__key {
@@ -123,9 +126,7 @@
           line-height: 27px;
           letter-spacing: 0em;
           text-align: left;
-
           color: $light;
-          margin-bottom: 10px;
         }
         .info__value {
           font-family: "Poppins-medium";

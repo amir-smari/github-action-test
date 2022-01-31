@@ -21,7 +21,7 @@
 .banner-section {
   background: $primary;
   text-align: center;
-  padding: 5%;
+  padding: 3rem 0;
   margin: 2% auto;
   @include flex-center;
   flex-direction: column;
