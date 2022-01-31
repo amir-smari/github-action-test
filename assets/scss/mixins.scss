@@ -82,4 +82,7 @@
   outline: none;
   border: none;
   padding-left: 13px;
+  &::placeholder {
+    color: #b5b5c3;
+  }
 }
