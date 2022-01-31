@@ -3,6 +3,7 @@
     <img src="@/assets/img/svg/circle.svg" alt="circle" class="circle" />
     <img src="@/assets/img/svg/disque.svg" alt="disque" class="disque" />
     <img src="@/assets/img/svg/hexagone.svg" alt="hexagone" class="hexagone" />
+    <div class="semi-circle"></div>
 
     <div class="welcome-section__content">
       <div class="welcome-section__header">
@@ -27,29 +28,34 @@
 
 <style lang="scss" scoped>
 .welcome-section {
-  background-image: url("@/assets/img/png/community-bg.png");
-  background-size: 100vw 100%;
-  background-repeat: no-repeat;
-  text-align: center;
-  margin: auto;
+  // background-image: url("@/assets/img/png/community-bg.png");
+  background-color: #fff;
   height: 90vh;
   position: relative;
   .disque {
     position: absolute;
-    right: 138px;
-    top: 119px;
+    bottom: 20%;
+    right: 15%;
   }
   .circle {
     position: absolute;
-    left: 302px;
-    top: 123px;
+    left: 15%;
+    bottom: 20%;
   }
   .hexagone {
     position: absolute;
-    left: 98px;
-    bottom: 225px;
+    left: 15%;
+    top: 20%;
   }
-
+  .semi-circle {
+    position: absolute;
+    background-image: url("@/assets/img/png/ellipse.png");
+    right: 0%;
+    top: 10%;
+    background-repeat: no-repeat;
+    height: 14rem;
+    width: 6rem;
+  }
   .welcome-section__header {
     .title {
       font-size: 1.5rem;
