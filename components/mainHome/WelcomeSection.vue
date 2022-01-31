@@ -61,7 +61,7 @@
   .welcome-section__content {
     width: 57.8%;
     margin: auto;
-    text-align: justify;
+    text-align: center;
 
     span {
       font-family: "Poppins-semibold";
