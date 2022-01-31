@@ -1,0 +1,49 @@
+{
+  "headerAnnouncement": "Version Saas disponible en avril 2022, soyez les premiers",
+  "welcome": {
+    "workflowsAutomationPlatform": "Plateforme d'automatisation des workflows",
+    "title": "Programmez autrement, développez plus rapidement",
+    "description": "500 fonctionnalités font aujourd’hui 80% de tous les développements informatiques. Il est donc possible de proposer des solutions d’automatisation qui feront gagner un temps considérable aux développeurs"
+  },
+  "register": {
+    "title": "Estimez le temps de développement et le coût de votre projet",
+    "goToEditor": "Accédez à votre éditeur de CDC",
+    "beFirst": "soyez les premiers",
+    "disponible": "Version Saas disponible en",
+    "April": "avril",
+    "formTitle": "Inscrivez-vous sur la liste d'attente pour une démo",
+    "placeholderEmail": "Entrez votre email",
+    "notifyMe": "Notifiez-moi"
+  },
+  "about": {
+    "solution": "La Solution",
+    "WhetherYouAre": "Que vous soyez une Start Up, un éditeur ou bien un entrepreneur",
+    "weHave": "nous avons ",
+    "developApplication": "pour développer vos applications web",
+    "engagezVosPartenaires": "engagez vos partenaires",
+    "designYourPrototype": "Concevez plus rapidement votre prototype, étape clé pour une levée de fonds",
+    "devFactoryIsWorkflow": "DevFactory est une plateforme d’automatisation des workflows, axée autour d’une méthodologie innovante de programmation",
+    "learnMore": "En savoir plus"
+  },
+  "mindMap": {
+    "title": "Estimez le temps de développement et le prix de votre solution grâce à notre éditeur de cahier des charges nouvelle génération basée sur la méthode WBS",
+    "startYourCdc": "Démarrez votre CDC"
+  },
+  "banner": {
+    "lackOfResources": "Un manque de ressources pour développer",
+    "technicalHazard": "Aléas techniques sur votre projet",
+    "description": "Accélérez vos développements : Bénéficiez de la puissance de la plateforme DevFactory, de ressources dédiées et de notre expertise en nouvelles technologies",
+    "discoverTheOffer": "Découvrir l'offre",
+    "businessCase": "Voir le Business case"
+  },
+  "contact": {
+    "title": "Décrivez-nous votre besoin. Nous vous contacterons sous 48H",
+    "nom": "Nom",
+    "email": "E-mail",
+    "subject": "Sujet",
+    "send": "Envoyer",
+    "phone": "Téléphone",
+    "visitOurWebsite": "Visitez notre site internet",
+    "follow": "SUIVEZ-NOUS"
+  }
+}
