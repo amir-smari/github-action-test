@@ -1,5 +1,5 @@
 <template>
-  <div class="mindmap-section" id="mindmap">
+  <div id="mindmap" class="mindmap-section">
     <div class="mindmap__content">
       Estimez le temps de développement et le prix de votre solution grâce à
       notre éditeur de cahier des charges nouvelle génération basée sur la

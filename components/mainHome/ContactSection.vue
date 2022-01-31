@@ -30,7 +30,7 @@
         </div>
         <div class="info__property">
           <span class="info__key">SUIVEZ-NOUS</span>
-          <img src="@/assets/img/svg/linkdin.svg" alt="linkdin" class="media"/>
+          <img src="@/assets/img/svg/linkdin.svg" alt="linkdin" class="media" />
         </div>
       </div>
     </div>
@@ -138,7 +138,7 @@
 
           color: $light;
         }
-        .media{
+        .media {
           cursor: pointer;
         }
       }

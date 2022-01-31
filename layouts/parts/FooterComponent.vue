@@ -1,7 +1,11 @@
 <template>
   <footer>
     <div>
-      <img src="@/assets/img/svg/footer-logo.svg" alt="logo" class="footer__logo" />
+      <img
+        src="@/assets/img/svg/footer-logo.svg"
+        alt="logo"
+        class="footer__logo"
+      />
     </div>
     <span>© 2022 DevFactory. Powered by Sastec.</span>
     <div class="contact">
@@ -28,7 +32,7 @@ footer {
   letter-spacing: 0px;
   text-align: center;
 
-  .footer__logo{
+  .footer__logo {
     cursor: pointer;
   }
   .contact {
@@ -36,10 +40,9 @@ footer {
       margin-right: 10px;
       width: 30px;
     }
-     .media {
+    .media {
       cursor: pointer;
     }
-   
   }
 }
 

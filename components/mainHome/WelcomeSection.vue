@@ -10,7 +10,7 @@
     <div class="welcome-section__content">
       <p>Programmez autrement, développez plus rapidement</p>
       <span
-        >“500 fonctionnalités font aujourd’hui 80 % de tous les développements
+        >“500 fonctionnalités font aujourd’hui 80% de tous les développements
         informatiques. Il est donc possible de proposer des solutions
         d’automatisation qui feront gagner un temps considérable aux
         développeurs”.</span
@@ -38,7 +38,6 @@
     position: absolute;
     left: 302px;
     top: 123px;
-   
   }
   .hexagone {
     position: absolute;
@@ -63,7 +62,6 @@
     }
   }
   .welcome-section__content {
-    
     width: 57.8%;
     margin: auto;
     text-align: justify;
@@ -96,9 +94,11 @@
 @media screen and (max-width: $lg) {
   .welcome-section {
     height: auto;
-    background-image:$light;
+    background-image: $light;
 
-    .disque,.circle,.hexagone{
+    .disque,
+    .circle,
+    .hexagone {
       display: none;
     }
     img {
@@ -113,7 +113,7 @@
     .welcome-section__content {
       width: 90%;
 
-      p{
+      p {
         @include small-text;
       }
 
