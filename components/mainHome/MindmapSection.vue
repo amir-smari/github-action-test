@@ -42,6 +42,9 @@
   letter-spacing: 0px;
   text-align: left;
   margin-bottom: 10%;
+  &:hover {
+    background: darken($primary, 10%);
+  }
 }
 img {
   max-width: 90%;

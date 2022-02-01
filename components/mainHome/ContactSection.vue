@@ -101,11 +101,14 @@
         width: 100%;
         background: $primary;
         color: $light;
+
+        &:hover {
+          background: darken($primary, 10%);
+        }
       }
     }
     .contact-info {
       background: $primary;
-
       display: flex;
       flex-direction: column;
       justify-content: center;

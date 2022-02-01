@@ -52,10 +52,17 @@
   .outline__btn {
     color: $primary;
     background: $light;
+
     @include btn;
     @include small-text;
     margin: 26px auto;
     font-weight: 600 !important;
+    gap: 0.5rem;
+    box-shadow: 0px 3.85714px 15.4286px -1.28571px rgba(24, 28, 50, 0.4),
+      0px 2.57143px 5.14286px -1.28571px rgba(24, 28, 50, 0.1);
+    &:hover {
+      background: darken($light, 10%);
+    }
   }
   .register-section__form {
     width: 80%;
@@ -108,6 +115,9 @@
         line-height: 20px;
         letter-spacing: 0em;
         text-align: center;
+        &:hover {
+          background: darken($primary, 10%);
+        }
       }
       input {
         @include input;

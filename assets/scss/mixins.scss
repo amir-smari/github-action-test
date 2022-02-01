@@ -72,6 +72,7 @@
   font-weight: 500;
   @include flex-center;
   cursor: pointer;
+  transition: all 150ms ease-in-out;
 }
 
 @mixin input {

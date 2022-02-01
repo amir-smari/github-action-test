@@ -107,6 +107,9 @@
           color: $light;
           margin-top: 15px;
           padding: 11px;
+          &:hover {
+            background: darken($primary, 10%);
+          }
         }
       }
 

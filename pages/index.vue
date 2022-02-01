@@ -50,6 +50,9 @@ const scrollToTop = () => {
     img {
       transform: rotate(270deg);
     }
+    &:hover {
+      background: darken($primary, 10%);
+    }
   }
 }
 .problematic-img {

@@ -60,8 +60,11 @@
       line-height: 26px;
       letter-spacing: 0em;
       text-align: center;
-
+      box-shadow: 0px 1.31818px 5.27273px -1.31818px rgba(24, 28, 50, 0.2);
       color: $grey2;
+      &:hover {
+        background: darken($light, 10%);
+      }
     }
   }
 }
