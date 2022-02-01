@@ -35,13 +35,9 @@
   background: $primary;
   color: $light;
   margin: auto;
-  font-size: 1.66rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 39px;
-  letter-spacing: 0px;
-  text-align: left;
   margin-bottom: 10%;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
   &:hover {
     background: darken($primary, 10%);
   }

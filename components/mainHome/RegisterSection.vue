@@ -106,6 +106,7 @@
       margin-bottom: 3%;
       .primary__btn {
         @include btn;
+
         padding: 12px;
         background: $primary;
         color: $light;
@@ -115,6 +116,7 @@
         line-height: 20px;
         letter-spacing: 0em;
         text-align: center;
+        box-shadow: 0px 1px 4px -1px rgba(24, 28, 50, 0.2);
         &:hover {
           background: darken($primary, 10%);
         }

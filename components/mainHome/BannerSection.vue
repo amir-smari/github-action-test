@@ -53,8 +53,8 @@
     column-gap: 10px;
     .primary__btn {
       @include btn;
-      padding: 16px;
-      font-size: 1.31rem;
+      padding: 0.75rem 2rem;
+      // font-size: 1.31rem;
       font-style: normal;
       font-weight: 700;
       line-height: 26px;

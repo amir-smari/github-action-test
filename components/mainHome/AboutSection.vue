@@ -106,9 +106,16 @@
           background: $primary;
           color: $light;
           margin-top: 15px;
-          padding: 11px;
+          padding: 0.5rem 1rem;
+          box-shadow: 0px 3px 12px -1px rgba(24, 28, 50, 0.4),
+            0px 2px 4px -1px rgba(24, 28, 50, 0.1);
+          gap: 0.5rem;
+
           &:hover {
             background: darken($primary, 10%);
+          }
+          img {
+            transform: scale(0.8);
           }
         }
       }
