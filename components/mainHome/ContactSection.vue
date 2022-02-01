@@ -1,6 +1,5 @@
 <template>
   <div class="contact-section">
-    <span class="dot"></span>
     <div class="contact__wrapper">
       <div class="contact-form">
         <p class="form__title">
@@ -33,6 +32,7 @@
           <img src="@/assets/img/svg/linkdin.svg" alt="linkdin" class="media" />
         </div>
       </div>
+      <span class="dot"></span>
     </div>
   </div>
 </template>
@@ -40,7 +40,7 @@
 <style lang="scss" scoped>
 .contact-section {
   @include flex-center;
-  margin: 5% auto;
+  margin: 8rem auto 5% auto;
   position: relative;
   .dot {
     height: 107px;
@@ -50,24 +50,24 @@
     display: block;
     position: absolute;
     top: 0;
-    left: 7%;
+    left: -3rem;
     transform: translate(0%, -50%);
+    z-index: -1;
   }
   .contact__wrapper {
+    position: relative;
     display: flex;
-    width: 80%;
+    width: 60%;
     border-radius: 6px;
-    overflow: hidden;
     perspective: 1px;
     box-shadow: 0px 3px 12px -1px $grey04, 0px 2px 4px -1px $grey11;
     .contact-form {
       background: $light;
       flex-grow: 1;
       padding: 2rem 3rem;
+      border-radius: 6px 0px 0px 6px;
       .form__title {
-        font-family: "Poppins-semibold";
         font-size: 1.18rem;
-        font-style: normal;
         font-weight: 600;
         line-height: 29px;
         letter-spacing: 0em;
@@ -113,8 +113,9 @@
       flex-direction: column;
       justify-content: center;
       padding-left: 3rem;
-      padding-right: 10rem;
+      padding-right: 7rem;
       gap: 2rem;
+      border-radius: 0px 6px 6px 0px;
       .info__property {
         flex-direction: column;
         @include flex-start;
@@ -122,9 +123,7 @@
         text-align: start;
 
         .info__key {
-          font-family: "Poppins-semibold";
           font-size: 1.12rem;
-          font-style: normal;
           font-weight: 600;
           line-height: 27px;
           letter-spacing: 0em;
@@ -132,14 +131,11 @@
           color: $light;
         }
         .info__value {
-          font-family: "Poppins-medium";
           font-size: 0.8rem;
-          font-style: normal;
           font-weight: 500;
           line-height: 21px;
           letter-spacing: 0em;
           text-align: left;
-
           color: $light;
         }
         .media {

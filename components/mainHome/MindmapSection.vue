@@ -20,9 +20,7 @@
   margin: auto;
   text-align: center;
   margin-bottom: 2%;
-  font-family: "Poppins-bold";
   font-size: 1.5rem;
-  font-style: bold;
   font-weight: 600;
   line-height: 2.55rem;
   letter-spacing: 0px;

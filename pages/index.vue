@@ -1,28 +1,33 @@
 <template>
-  <div class="home">
-    <!-- <Language /> -->
-    <WelcomeSection />
-    <img
-      src="@/assets/img/png/problematic.png"
-      alt="problematic"
-      class="problematic-img"
-    />
-    <RegisterSection />
-    <AboutSection />
-    <img
-      src="@/assets/img/png/code-editor.png"
-      alt="problematic"
-      class="problematic-img"
-    />
-    <MindmapSection />
-    <BannerSection />
-    <ContactSection />
-    <div class="scroll__wrapper" :class="windowTop > 500 ? 'show-scroll' : ''">
-      <button class="scroll-btn" @click="scrollToTop">
-        <img src="@/assets/img/svg/light-arrow.svg" alt="arrow" />
-      </button>
+  <NuxtLayout>
+    <div class="home">
+      <!-- <Language /> -->
+      <WelcomeSection />
+      <img
+        src="@/assets/img/png/problematic.png"
+        alt="problematic"
+        class="problematic-img"
+      />
+      <RegisterSection />
+      <AboutSection />
+      <img
+        src="@/assets/img/png/code-editor.png"
+        alt="problematic"
+        class="problematic-img"
+      />
+      <MindmapSection />
+      <BannerSection />
+      <ContactSection />
+      <div
+        class="scroll__wrapper"
+        :class="windowTop > 500 ? 'show-scroll' : ''"
+      >
+        <button class="scroll-btn" @click="scrollToTop">
+          <img src="@/assets/img/svg/light-arrow.svg" alt="arrow" />
+        </button>
+      </div>
     </div>
-  </div>
+  </NuxtLayout>
 </template>
 <script lang="ts">
 import WelcomeSection from "@/components/mainHome/WelcomeSection.vue";

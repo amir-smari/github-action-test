@@ -27,14 +27,11 @@
   flex-direction: column;
   text-align: center;
   span {
-    font-family: "Poppins-medium";
     font-size: 1.3rem;
-    font-style: normal;
     font-weight: 500;
     line-height: 32px;
     letter-spacing: 0px;
     text-align: center;
-
     margin: 2% auto;
   }
   p {
@@ -54,7 +51,6 @@
     .primary__btn {
       @include btn;
       padding: 0.75rem 2rem;
-      // font-size: 1.31rem;
       font-style: normal;
       font-weight: 700;
       line-height: 26px;

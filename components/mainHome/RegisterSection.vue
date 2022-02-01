@@ -40,10 +40,7 @@
     text-decoration: none;
   }
   .register-section__title {
-    //styleName: SemiBold/H2-SB;
-    font-family: "Poppins-semibold";
     font-size: 1.5rem;
-    font-style: normal;
     font-weight: 600;
     line-height: 36px;
     letter-spacing: 0px;
@@ -52,16 +49,17 @@
   .outline__btn {
     color: $primary;
     background: $light;
-
     @include btn;
-    @include small-text;
     margin: 26px auto;
-    font-weight: 600 !important;
+    font-weight: 500;
     gap: 0.5rem;
     box-shadow: 0px 3.85714px 15.4286px -1.28571px rgba(24, 28, 50, 0.4),
       0px 2.57143px 5.14286px -1.28571px rgba(24, 28, 50, 0.1);
     &:hover {
       background: darken($light, 10%);
+    }
+    span {
+      font-family: Poppins;
     }
   }
   .register-section__form {
@@ -76,27 +74,21 @@
     border-radius: 12px;
     padding: 3%;
     .form-title {
-      font-family: "Poppins-medium";
       font-size: 2rem;
-      font-style: normal;
       font-weight: 500;
       line-height: 3rem;
       letter-spacing: 0px;
       span {
-        font-family: "Poppins-bold";
         color: $primary;
         font-weight: 700;
       }
     }
     .form-title-muted {
-      font-family: "Poppins-medium";
       font-size: 1.05rem;
-      font-style: normal;
       font-weight: 500;
       line-height: 26px;
       letter-spacing: 0px;
       text-align: center;
-
       color: $grey3;
     }
     .form__wrapper {
