@@ -3,8 +3,21 @@
     <div class="mindmap__content">
       {{ $t("mindMap.title") }}
     </div>
-    <img src="@/assets/img/png/mindmap.png" alt="mindmap" />
-    <button class="primary__btn">{{ $t("mindMap.startYourCdc") }}</button>
+    <img
+      src="@/assets/img/png/mindmap.png"
+      alt="mindmap"
+      data-aos="fade-up"
+      data-aos-easing="linear"
+      data-aos-duration="1500"
+    />
+    <button
+      class="primary__btn"
+      data-aos="fade-zoom-in"
+      data-aos-easing="ease-in-back"
+      data-aos-delay="300"
+    >
+      {{ $t("mindMap.startYourCdc") }}
+    </button>
   </div>
 </template>
 <style lang="scss" scoped>

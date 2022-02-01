@@ -2,7 +2,7 @@
   <div class="contact-section">
     <span class="dot"></span>
     <div class="contact__wrapper">
-      <div class="contact-form">
+      <div class="contact-form" data-aos="fade-down">
         <p class="form__title">
           {{ $t("contact.title") }}
         </p>
@@ -19,7 +19,7 @@
         <textarea id="story" name="story" placeholder="Message"></textarea>
         <button class="btn__primary">{{ $t("contact.send") }}</button>
       </div>
-      <div class="contact-info">
+      <div class="contact-info" data-aos="fade-left">
         <div class="info__property">
           <span class="info__key">{{ $t("contact.phone") }}</span>
           <span class="info__value">06 18 41 90 27</span>

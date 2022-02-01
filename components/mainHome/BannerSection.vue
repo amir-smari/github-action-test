@@ -1,15 +1,15 @@
 <template>
   <div class="banner-section">
-    <img src="@/assets/img/svg/studio-logo.svg" alt="logo" />
+    <img src="@/assets/img/svg/studio-logo.svg" alt="logo" data-aos="fade-down"/>
     <span>
       {{ $t("banner.lackOfResources") }} ? {{ $t("banner.technicalHazard") }} ?
     </span>
     <p>{{ $t("banner.description") }} !</p>
     <div class="btns__wrapper">
-      <button class="primary__btn" @click="openModal('flyerModal')">
+      <button class="primary__btn" @click="openModal('flyerModal')" data-aos="fade-right">
         {{ $t("banner.discoverTheOffer") }}
       </button>
-      <button class="primary__btn" @click="openModal('businessModal')">
+      <button class="primary__btn" @click="openModal('businessModal')" data-aos="fade-left">
         {{ $t("banner.businessCase") }}
       </button>
     </div>
