@@ -6,11 +6,38 @@
     </span>
     <p>{{ $t("banner.description") }} !</p>
     <div class="btns__wrapper">
-      <button class="primary__btn">{{ $t("banner.discoverTheOffer") }}</button>
-      <button class="primary__btn">{{ $t("banner.businessCase") }}</button>
+      <button class="primary__btn" @click="openModal('flyerModal')">
+        {{ $t("banner.discoverTheOffer") }}
+      </button>
+      <button class="primary__btn" @click="openModal('businessModal')">
+        {{ $t("banner.businessCase") }}
+      </button>
     </div>
+    <ModalComponent v-show="showModal" @close-modal="showModal = false">
+      <iframe
+        :src="
+          id == 'flyerModal'
+            ? '../assets/pdf/flyer.pdf'
+            : '../assets/pdf/business-case.pdf'
+        "
+        frameborder="0"
+        width="100%"
+        height="100%"
+      ></iframe>
+    </ModalComponent>
   </div>
 </template>
+
+<script lang="ts" setup>
+import { ref } from "vue";
+import ModalComponent from "@/components/shared/ModalComponent.vue";
+const showModal = ref(false);
+const id = ref("");
+const openModal = (modalId: string): void => {
+  showModal.value = true;
+  id.value = modalId;
+};
+</script>
 
 <style lang="scss" scoped>
 .banner-section {

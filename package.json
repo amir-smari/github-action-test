@@ -23,6 +23,7 @@
   "dependencies": {
     "@intlify/nuxt3": "^0.1.10",
     "sass": "^1.49.0",
-    "sass-loader": "^12.4.0"
+    "sass-loader": "^12.4.0",
+    "vue-js-modal": "^2.0.1"
   }
 }
