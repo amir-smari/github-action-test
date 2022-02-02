@@ -1,7 +1,7 @@
 <template>
   <div class="contact-section">
     <div class="contact__wrapper">
-      <div class="contact-form" data-aos="fade-down">
+      <div class="contact-form">
         <p class="form__title">
           {{ $t("contact.title") }}
         </p>
@@ -18,7 +18,7 @@
         <textarea id="story" name="story" placeholder="Message"></textarea>
         <button class="btn__primary">{{ $t("contact.send") }}</button>
       </div>
-      <div class="contact-info" data-aos="fade-left">
+      <div class="contact-info">
         <div class="info__property">
           <span class="info__key">{{ $t("contact.phone") }}</span>
           <span class="info__value">06 18 41 90 27</span>
@@ -44,7 +44,7 @@
 <style lang="scss" scoped>
 .contact-section {
   @include flex-center;
-  margin: 8rem auto 5% auto;
+  margin: 4rem;
   position: relative;
   .dot {
     height: 107px;
@@ -61,7 +61,6 @@
   .contact__wrapper {
     position: relative;
     display: flex;
-    width: 60%;
     border-radius: 6px;
     perspective: 1px;
     box-shadow: 0px 3px 12px -1px $grey04, 0px 2px 4px -1px $grey11;
@@ -116,8 +115,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding-left: 3rem;
-      padding-right: 7rem;
+      padding: 2rem 3rem;
       gap: 2rem;
       border-radius: 0px 6px 6px 0px;
       .info__property {
@@ -153,6 +151,11 @@
 @media screen and (max-width: $lg) {
   .dot {
     display: none !important;
+  }
+}
+@media screen and (min-width: $lg) {
+  .contact-section {
+    margin-top: 6rem;
   }
 }
 @media screen and (max-width: $md) {

@@ -6,7 +6,6 @@
       src="@/assets/img/png/problematic.png"
       alt="problematic"
       class="problematic-img"
-      data-aos="fade-left"
     />
     <RegisterSection />
     <AboutSection />
@@ -57,7 +56,6 @@ export default {
     },
     onScroll(e) {
       this.windowTop = e.target.documentElement.scrollTop;
-      console.log(this.windowTop);
     },
   },
   mounted() {

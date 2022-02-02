@@ -8,14 +8,9 @@
       alt="mindmap"
       data-aos="fade-up"
       data-aos-easing="linear"
-      data-aos-duration="1500"
+      data-aos-duration="1000"
     />
-    <button
-      class="primary__btn"
-      data-aos="fade-zoom-in"
-      data-aos-easing="ease-in-back"
-      data-aos-delay="300"
-    >
+    <button class="primary__btn">
       {{ $t("mindMap.startYourCdc") }}
     </button>
   </div>

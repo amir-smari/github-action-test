@@ -18,9 +18,7 @@
           </q>
         </p>
       </div>
-      <div class="welcome-section_illustrator">
-        <img src="@/assets/img/png/community.png" alt="community" />
-      </div>
+      <div class="welcome-section_illustrator"></div>
     </div>
   </div>
 </template>
@@ -103,6 +101,12 @@
       }
     }
   }
+}
+.welcome-section_illustrator {
+  background-image: url("@/assets/img/png/community.png");
+  width: 17rem;
+  height: 18rem;
+  background-repeat: no-repeat;
 }
 @media screen and (max-width: $lg) {
   .welcome-section {
