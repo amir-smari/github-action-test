@@ -58,7 +58,6 @@ export default {
     },
     onScroll(e) {
       this.windowTop = e.target.documentElement.scrollTop;
-      console.log(this.windowTop);
     },
     trackClicks() {
       this.$gtag.event("latest-release-click", {
