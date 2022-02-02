@@ -27,7 +27,7 @@
 .welcome-section {
   // background-image: url("@/assets/img/png/community-bg.png");
   background-color: #fff;
-  height: 90vh;
+  height: 85vh;
   position: relative;
   clip-path: ellipse(123% 100% at 50% 0%);
   .disque {
@@ -65,6 +65,7 @@
     width: 6rem;
   }
   .welcome-section__header {
+    padding-bottom: 0;
     .title {
       font-size: 1.5rem;
       font-weight: 600;
@@ -83,9 +84,11 @@
     width: 52%;
     margin: auto;
     text-align: justify;
-    @include flex-evenly;
+    display: flex;
+    align-items: center;
     flex-direction: column;
     height: 100%;
+    gap: 3rem;
     .welcome-section__desc {
       text-align: center;
       h1 {

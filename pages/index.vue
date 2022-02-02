@@ -8,14 +8,15 @@
     />
     <RegisterSection />
     <AboutSection />
-    <img
+    <!-- <img
       src="@/assets/img/png/code-editor.png"
       alt="problematic"
       class="problematic-img"
       data-aos="fade-down"
       data-aos-easing="linear"
       data-aos-duration="500"
-    />
+    /> -->
+    <EditorImgSection />
     <MindmapSection />
     <BannerSection />
     <ContactSection />
@@ -32,6 +33,7 @@ import RegisterSection from "@/components/mainHome/RegisterSection.vue";
 import AboutSection from "@/components/mainHome/AboutSection.vue";
 import MindmapSection from "@/components/mainHome/MindmapSection.vue";
 import BannerSection from "@/components/mainHome/BannerSection.vue";
+import EditorImgSection from "@/components/mainHome/EditorImgSection.vue";
 import ContactSection from "@/components/mainHome/ContactSection.vue";
 
 export default {
@@ -42,6 +44,7 @@ export default {
     ContactSection,
     AboutSection,
     BannerSection,
+    EditorImgSection,
   },
   data() {
     return {

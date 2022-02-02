@@ -88,7 +88,7 @@ const showModal = ref(false);
     margin-top: 14%;
   }
   .about {
-    margin-bottom: 10%;
+    margin-bottom: 4rem;
     .about__wrapper {
       @include flex-around;
       position: relative;
@@ -151,12 +151,14 @@ const showModal = ref(false);
       }
       .about__wrapper {
         flex-direction: column;
-
+        img {
+          max-width: 300px;
+        }
         .about__content {
           width: 80%;
           text-align: center;
           .primary__btn {
-            margin: auto;
+            margin: 1rem auto;
           }
         }
       }

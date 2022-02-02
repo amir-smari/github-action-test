@@ -41,5 +41,6 @@
 .button label {
   cursor: pointer;
   z-index: 90;
+  font-weight: 600;
 }
 </style>
