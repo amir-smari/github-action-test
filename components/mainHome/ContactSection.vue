@@ -29,11 +29,22 @@
         </div>
         <div class="info__property">
           <span class="info__key">{{ $t("contact.visitOurWebsite") }}</span>
-          <span class="info__value">www.sastec-group.com</span>
+          <a href="www.sastec-group.com" target="_blank">
+            <span class="info__value">www.sastec-group.com</span>
+          </a>
         </div>
         <div class="info__property">
           <span class="info__key">{{ $t("contact.follow") }}</span>
-          <img src="@/assets/img/svg/linkdin.svg" alt="linkdin" class="media" />
+          <a
+            href="https://www.linkedin.com/company/devfactory-ai"
+            target="_blank"
+          >
+            <img
+              src="@/assets/img/svg/linkdin.svg"
+              alt="linkdin"
+              class="media"
+            />
+          </a>
         </div>
       </div>
       <span class="dot"></span>
@@ -139,6 +150,7 @@
           letter-spacing: 0em;
           text-align: left;
           color: $light;
+          white-space: nowrap;
         }
         .media {
           cursor: pointer;

@@ -9,8 +9,13 @@
     </div>
     <span>© 2022 DevFactory. Powered by Sastec.</span>
     <div class="contact">
-      <img src="@/assets/img/svg/email.svg" alt="email" class="media" />
-      <img src="@/assets/img/svg/linkdin.svg" alt="linkdin" class="media" />
+      <a href="mailto:Contact@devfactory.ai">
+        <img src="@/assets/img/svg/email.svg" alt="email" class="media" />
+      </a>
+
+      <a href="https://www.linkedin.com/company/devfactory-ai" target="_blank">
+        <img src="@/assets/img/svg/linkdin.svg" alt="linkdin" class="media" />
+      </a>
     </div>
   </footer>
 </template>
