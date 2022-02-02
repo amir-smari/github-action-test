@@ -6,7 +6,7 @@
           {{ $t("contact.title") }}
         </p>
         <div class="input__wrapper">
-          <input type="text" :placeholder="$t('contact.nom')" />
+          <input type="text" :placeholder="$t('contact.name')" />
           <input type="text" :placeholder="$t('contact.email')" />
         </div>
         <input

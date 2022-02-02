@@ -21,7 +21,7 @@
     <MindmapSection />
     <BannerSection />
     <ContactSection />
-    <div class="scroll__wrapper" data-aos="fade-up">
+    <div class="scroll__wrapper" :class="windowTop > 500 ? 'show-scroll' : ''">
       <button class="scroll-btn" @click="scrollToTop">
         <img src="@/assets/img/svg/light-arrow.svg" alt="arrow" />
       </button>

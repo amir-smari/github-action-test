@@ -1,6 +1,5 @@
 <template>
   <div class="welcome-section aos-init aos-animate" data-aos="fade-up">
-    <!-- <h1>{{ $hello() }}</h1> -->
     <img src="@/assets/img/svg/circle.svg" alt="circle" class="circle" />
     <div class="disque"></div>
     <div class="hexagone"></div>
@@ -9,15 +8,14 @@
     <div class="welcome-section__content">
       <div class="welcome-section__header">
         <img src="@/assets/img/svg/header-logo.svg" alt="logo" />
-        <p class="title">Workflows Automation Platform</p>
+        <p class="title">{{ $t("welcome.workflowsAutomationPlatform") }}</p>
       </div>
       <div class="welcome-section__desc">
-        <h1>Programmez autrement, développez plus rapidement</h1>
+        <h1>{{ $t("welcome.title") }}</h1>
         <p>
-          “500 fonctionnalités font aujourd’hui 80% de tous les développements
-          informatiques. Il est donc possible de proposer des solutions
-          d’automatisation qui feront gagner un temps considérable aux
-          développeurs”.
+          <q>
+            {{ $t("welcome.description") }}
+          </q>
         </p>
       </div>
       <div class="welcome-section_illustrator">
