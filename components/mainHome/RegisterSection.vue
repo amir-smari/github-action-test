@@ -1,25 +1,25 @@
 <template lang="">
   <div class="register-section">
     <div class="register-section__title">
-      Estimez le temps de développement et le coût de votre projet
+      {{ $t("register.title") }}
     </div>
     <a href="#mindmap">
       <button class="outline__btn">
-        <span> Accédez à votre éditeur de CDC</span>
+        <span> {{ $t("register.goToEditor") }}</span>
         <img src="@/assets/img/svg/arrow.svg" alt="arrow" />
       </button>
     </a>
     <div class="register-section__form">
       <span class="form-title"
-        >Version Saas disponible en <span>avril 2022</span>, soyez les premiers
+        >{{ $t("register.disponible") }}
+        <span>{{ $t("register.April") }} 2022</span>,
+        {{ $t("register.beFirst") }}
         !
       </span>
-      <span class="form-title-muted"
-        >Inscrivez-vous sur la liste d'attente pour une démo</span
-      >
+      <span class="form-title-muted"> {{ $t("register.formTitle") }}</span>
       <div class="form__wrapper">
-        <input type="text" placeholder="Entrez votre email" />
-        <button class="primary__btn">Notifiez-moi</button>
+        <input type="text" :placeholder="$t('register.placeholderEmail')" />
+        <button class="primary__btn">{{ $t("register.notifyMe") }}</button>
       </div>
     </div>
   </div>

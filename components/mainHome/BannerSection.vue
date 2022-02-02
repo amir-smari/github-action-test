@@ -2,20 +2,15 @@
   <div class="banner-section">
     <img src="@/assets/img/svg/studio-logo.svg" alt="logo" />
     <span>
-      Un manque de ressources pour développer? Des aléas techniques sur votre
-      projet?
+      {{ $t("banner.lackOfResources") }} ? {{ $t("banner.technicalHazard") }} ?
     </span>
-    <p>
-      Accélérez vos développements : Bénéficiez de la puissance de la plateforme
-      DevFactory, de ressources dédiées et de notre expertise en nouvelles
-      technologies !
-    </p>
+    <p>{{ $t("banner.description") }} !</p>
     <div class="btns__wrapper">
       <button class="primary__btn" @click="openModal('flyerModal')">
-        Découvrir l’offre
+        {{ $t("banner.discoverTheOffer") }}
       </button>
       <button class="primary__btn" @click="openModal('businessModal')">
-        Voir le Business case
+        {{ $t("banner.businessCase") }}
       </button>
     </div>
     <ModalComponent v-show="showModal" @close-modal="showModal = false">

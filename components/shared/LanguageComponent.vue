@@ -14,10 +14,5 @@
         </option>
       </select>
     </div>
-
-    <p>
-      Current translation:
-      <span class="font-bold">{{ $t("text") }}</span>
-    </p>
   </div>
 </template>

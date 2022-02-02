@@ -3,20 +3,24 @@
     <div class="contact__wrapper">
       <div class="contact-form">
         <p class="form__title">
-          Décrivez-nous votre besoin. Nous vous recontacterons sous 48H.
+          {{ $t("contact.title") }}
         </p>
         <div class="input__wrapper">
-          <input type="text" placeholder="Nom" />
-          <input type="text" placeholder="Email" />
+          <input type="text" :placeholder="$t('contact.nom')" />
+          <input type="text" :placeholder="$t('contact.email')" />
         </div>
-        <input type="text" placeholder="Subject" class="form__control" />
+        <input
+          type="text"
+          :placeholder="$t('contact.subject')"
+          class="form__control"
+        />
 
         <textarea id="story" name="story" placeholder="Message"></textarea>
-        <button class="btn__primary">Envoyer</button>
+        <button class="btn__primary">{{ $t("contact.send") }}</button>
       </div>
       <div class="contact-info">
         <div class="info__property">
-          <span class="info__key">Téléphone</span>
+          <span class="info__key">{{ $t("contact.phone") }}</span>
           <span class="info__value">06 18 41 90 27</span>
         </div>
         <div class="info__property">
@@ -24,11 +28,11 @@
           <span class="info__value">Contact@devfactory.ai</span>
         </div>
         <div class="info__property">
-          <span class="info__key">Visitez notre site internet</span>
+          <span class="info__key">{{ $t("contact.visitOurWebsite") }}</span>
           <span class="info__value">www.sastec-group.com</span>
         </div>
         <div class="info__property">
-          <span class="info__key">SUIVEZ-NOUS</span>
+          <span class="info__key">{{ $t("contact.follow") }}</span>
           <img src="@/assets/img/svg/linkdin.svg" alt="linkdin" class="media" />
         </div>
       </div>
