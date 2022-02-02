@@ -17,6 +17,7 @@
       data-aos="fade-down"
       data-aos-easing="linear"
       data-aos-duration="500"
+      @click="trackClicks"
     />
     <MindmapSection />
     <BannerSection />
@@ -58,6 +59,13 @@ export default {
     onScroll(e) {
       this.windowTop = e.target.documentElement.scrollTop;
       console.log(this.windowTop);
+    },
+    trackClicks() {
+      this.$gtag.event("latest-release-click", {
+        event_category: "documentaion",
+        event_label: "Latest Release Button Clicked",
+        value: 1,
+      });
     },
   },
   mounted() {

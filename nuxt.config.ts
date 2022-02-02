@@ -5,6 +5,10 @@ export default defineNuxtConfig({
   buildModules: ["@intlify/nuxt3"],
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ["@/assets/main.css"],
+  // env variable
+  publicRuntimeConfig: {
+    GA_MEASUREMENT_ID: process.env.GA_MEASUREMENT_ID,
+  },
   vite: {
     css: {
       preprocessorOptions: {
