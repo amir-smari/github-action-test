@@ -6,6 +6,6 @@ export default defineNuxtPlugin(() => {
   AOS.init({
     startEvent: "DOMContentLoaded",
     initClassName: true,
-    once: false,
+    once: true,
   });
 });

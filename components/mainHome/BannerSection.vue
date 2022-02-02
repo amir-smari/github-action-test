@@ -1,10 +1,6 @@
 <template>
   <div class="banner-section">
-    <img
-      src="@/assets/img/svg/studio-logo.svg"
-      alt="logo"
-      data-aos="fade-down"
-    />
+    <img src="@/assets/img/svg/studio-logo.svg" alt="logo" />
     <span>
       {{ $t("banner.lackOfResources") }} ? {{ $t("banner.technicalHazard") }} ?
     </span>
@@ -52,7 +48,7 @@ const closeModal = () => {
 .banner-section {
   background: $primary;
   text-align: center;
-  padding: 3rem 0;
+  padding: 3rem 0.5rem;
   margin: 2% auto;
   @include flex-center;
   flex-direction: column;

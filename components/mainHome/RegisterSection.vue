@@ -1,13 +1,11 @@
 <template lang="">
   <div class="register-section">
-    <div class="register-section__title" data-aos="fade-down">
+    <p class="register-section__title">
       {{ $t("register.title") }}
-    </div>
-    <a href="#mindmap">
-      <button class="outline__btn" data-aos="fade-down">
-        <span> {{ $t("register.goToEditor") }}</span>
-        <img src="@/assets/img/svg/arrow.svg" alt="arrow" />
-      </button>
+    </p>
+    <a href="#mindmap" class="outline__btn">
+      <span> {{ $t("register.goToEditor") }}</span>
+      <img src="@/assets/img/svg/arrow.svg" alt="arrow" />
     </a>
     <div
       class="register-section__form"
@@ -39,9 +37,10 @@
   position: relative;
   margin: 30px auto;
   height: 400px;
-  padding-top: 4%;
+  padding: 4% 0.5rem 0 0.5rem;
   a {
     text-decoration: none;
+    width: fit-content;
   }
   .register-section__title {
     font-size: 1.5rem;
