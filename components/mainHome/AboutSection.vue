@@ -84,7 +84,9 @@ const showModal = ref(false);
 
 <style lang="scss" scoped>
 .about-section {
-  margin-top: 10%;
+  .about:nth-child(1) {
+    margin-top: 14%;
+  }
   .about {
     margin-bottom: 10%;
     .about__wrapper {
@@ -101,18 +103,14 @@ const showModal = ref(false);
       .about__content {
         width: 33%;
         color: $grey1;
-        font-family: "Poppins-semibold";
         font-size: 1.3rem;
-        font-style: normal;
         font-weight: 600;
         line-height: 39px;
         letter-spacing: 0px;
         text-align: left;
         strong {
-          font-family: "Poppins-bold";
-          font-weight: 800;
+          font-weight: 700;
           font-size: 1.5rem;
-          font-style: bold;
         }
 
         .primary__btn {
@@ -120,7 +118,20 @@ const showModal = ref(false);
           background: $primary;
           color: $light;
           margin-top: 15px;
-          padding: 11px;
+          padding: 0.5rem 1rem;
+          box-shadow: 0px 3px 12px -1px rgba(24, 28, 50, 0.4),
+            0px 2px 4px -1px rgba(24, 28, 50, 0.1);
+          gap: 0.5rem;
+
+          &:hover {
+            background: darken($primary, 10%);
+          }
+          img {
+            transform: scale(0.8);
+          }
+          span {
+            font-family: Poppins;
+          }
         }
       }
 

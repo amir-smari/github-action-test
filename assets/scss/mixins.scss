@@ -15,6 +15,11 @@
   align-items: center;
   justify-content: space-between;
 }
+@mixin flex-evenly {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
 
 @mixin flex-start {
   display: flex;
@@ -67,6 +72,7 @@
   font-weight: 500;
   @include flex-center;
   cursor: pointer;
+  transition: all 150ms ease-in-out;
 }
 
 @mixin input {
@@ -77,4 +83,7 @@
   outline: none;
   border: none;
   padding-left: 13px;
+  &::placeholder {
+    color: #b5b5c3;
+  }
 }

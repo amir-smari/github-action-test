@@ -20,9 +20,7 @@
   margin: auto;
   text-align: center;
   margin-bottom: 2%;
-  font-family: "Poppins-bold";
   font-size: 1.5rem;
-  font-style: bold;
   font-weight: 600;
   line-height: 2.55rem;
   letter-spacing: 0px;
@@ -35,13 +33,12 @@
   background: $primary;
   color: $light;
   margin: auto;
-  font-size: 1.66rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 39px;
-  letter-spacing: 0px;
-  text-align: left;
   margin-bottom: 10%;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  &:hover {
+    background: darken($primary, 10%);
+  }
 }
 img {
   max-width: 90%;
