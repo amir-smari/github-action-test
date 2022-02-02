@@ -1,5 +1,6 @@
 <template>
-  <div class="welcome-section">
+  <div class="welcome-section aos-init aos-animate" data-aos="fade-up">
+    <!-- <h1>{{ $hello() }}</h1> -->
     <img src="@/assets/img/svg/circle.svg" alt="circle" class="circle" />
     <div class="disque"></div>
     <div class="hexagone"></div>

@@ -1,15 +1,19 @@
 <template lang="">
   <div class="register-section">
-    <div class="register-section__title">
+    <div class="register-section__title" data-aos="fade-down">
       {{ $t("register.title") }}
     </div>
     <a href="#mindmap">
-      <button class="outline__btn">
+      <button class="outline__btn" data-aos="fade-down">
         <span> {{ $t("register.goToEditor") }}</span>
         <img src="@/assets/img/svg/arrow.svg" alt="arrow" />
       </button>
     </a>
-    <div class="register-section__form">
+    <div
+      class="register-section__form"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
       <span class="form-title"
         >{{ $t("register.disponible") }}
         <span>{{ $t("register.April") }} 2022</span>,

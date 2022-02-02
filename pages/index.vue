@@ -1,33 +1,32 @@
 <template>
-  <NuxtLayout>
-    <div class="home">
-      <!-- <Language /> -->
-      <WelcomeSection />
-      <img
-        src="@/assets/img/png/problematic.png"
-        alt="problematic"
-        class="problematic-img"
-      />
-      <RegisterSection />
-      <AboutSection />
-      <img
-        src="@/assets/img/png/code-editor.png"
-        alt="problematic"
-        class="problematic-img"
-      />
-      <MindmapSection />
-      <BannerSection />
-      <ContactSection />
-      <div
-        class="scroll__wrapper"
-        :class="windowTop > 500 ? 'show-scroll' : ''"
-      >
-        <button class="scroll-btn" @click="scrollToTop">
-          <img src="@/assets/img/svg/light-arrow.svg" alt="arrow" />
-        </button>
-      </div>
+  <div class="home">
+    <!-- <Language /> -->
+    <WelcomeSection />
+    <img
+      src="@/assets/img/png/problematic.png"
+      alt="problematic"
+      class="problematic-img"
+      data-aos="fade-left"
+    />
+    <RegisterSection />
+    <AboutSection />
+    <img
+      src="@/assets/img/png/code-editor.png"
+      alt="problematic"
+      class="problematic-img"
+      data-aos="fade-down"
+      data-aos-easing="linear"
+      data-aos-duration="500"
+    />
+    <MindmapSection />
+    <BannerSection />
+    <ContactSection />
+    <div class="scroll__wrapper" data-aos="fade-up">
+      <button class="scroll-btn" @click="scrollToTop">
+        <img src="@/assets/img/svg/light-arrow.svg" alt="arrow" />
+      </button>
     </div>
-  </NuxtLayout>
+  </div>
 </template>
 <script lang="ts">
 import WelcomeSection from "@/components/mainHome/WelcomeSection.vue";
