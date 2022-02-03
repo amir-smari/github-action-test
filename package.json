@@ -30,6 +30,7 @@
   "dependencies": {
     "@intlify/nuxt3": "^0.1.10",
     "aos": "^2.3.4",
+    "nodemailer": "^6.7.2",
     "sass": "^1.49.0",
     "sass-loader": "^12.4.0"
   }

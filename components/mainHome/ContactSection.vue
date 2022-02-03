@@ -1,21 +1,35 @@
 <template>
-  <div class="contact-section">
+  <form class="contact-section" @submit.prevent="handleSubmit">
     <div class="contact__wrapper">
       <div class="contact-form">
         <p class="form__title">
           {{ $t("contact.title") }}
         </p>
         <div class="input__wrapper">
-          <input type="text" :placeholder="$t('contact.name')" />
-          <input type="text" :placeholder="$t('contact.email')" />
+          <input
+            type="text"
+            v-model="formFields.name"
+            :placeholder="$t('contact.name')"
+          />
+          <input
+            type="text"
+            v-model="formFields.email"
+            :placeholder="$t('contact.email')"
+          />
         </div>
         <input
           type="text"
+          v-model="formFields.subject"
           :placeholder="$t('contact.subject')"
           class="form__control"
         />
 
-        <textarea id="story" name="story" placeholder="Message"></textarea>
+        <textarea
+          id="story"
+          name="story"
+          v-model="formFields.message"
+          placeholder="Message"
+        ></textarea>
         <button class="btn__primary">{{ $t("contact.send") }}</button>
       </div>
       <div class="contact-info">
@@ -49,9 +63,25 @@
       </div>
       <span class="dot"></span>
     </div>
-  </div>
+  </form>
 </template>
-
+<script lang="ts" setup>
+import { ref } from "vue";
+const formFields = ref({
+  name: "",
+  email: "",
+  message: "",
+  subject: "",
+});
+//TODO add form validation
+//WE can change the method fetch with axios
+const handleSubmit = async () => {
+  const { data, error } = (await $fetch(`/api/contact`, {
+    method: "POST",
+    body: { form: formFields.value },
+  })) as any;
+};
+</script>
 <style lang="scss" scoped>
 .contact-section {
   @include flex-center;
