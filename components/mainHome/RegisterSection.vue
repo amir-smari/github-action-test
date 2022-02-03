@@ -22,12 +22,45 @@
       </span>
       <span class="form-title-muted"> {{ $t("register.formTitle") }}</span>
       <div class="form__wrapper">
-        <input type="text" :placeholder="$t('register.placeholderEmail')" />
-        <button class="primary__btn">{{ $t("register.notifyMe") }}</button>
+        <div class="register-input">
+          <input
+            type="email"
+            :placeholder="$t('register.placeholderEmail')"
+            v-model="formValue.email"
+          />
+          <span class="required-input" v-show="checkInput.isEmailValid"
+            >email is required</span
+          >
+        </div>
+        <button class="primary__btn" @click="handelRegisterBtn">
+          {{ $t("register.notifyMe") }}
+        </button>
       </div>
     </div>
   </div>
 </template>
+
+<script lang="ts" setup>
+let checkInput = ref({
+  isEmailValid: false,
+});
+const formValue = ref({
+  email: "",
+});
+const handelRegisterBtn = (event) => {
+  event.preventDefault();
+  //mailAddress Validation
+  const regEmail =
+    /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+  if (!regEmail.test(formValue.value.email)) {
+    checkInput.value.isEmailValid = true;
+  } else checkInput.value.isEmailValid = false;
+  if (!checkInput.value.isEmailValid) {
+    console.log("submited");
+    formValue.value.email = "";
+  }
+};
+</script>
 
 <style lang="scss" scoped>
 .register-section {
@@ -96,10 +129,11 @@
       color: $grey3;
     }
     .form__wrapper {
-      @include flex-center;
-      column-gap: 10px;
+      display: flex;
+      gap: 1rem;
+      align-items: baseline;
       margin-top: 30px;
-      margin-bottom: 3%;
+      margin-bottom: 0.5rem;
       .primary__btn {
         @include btn;
 
@@ -122,6 +156,12 @@
       }
     }
   }
+}
+.register-input {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 0.25rem;
 }
 @media screen and (max-width: $lg) {
   .register-section {
