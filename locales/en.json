@@ -1,0 +1,49 @@
+{
+  "headerAnnouncement": "Saas version available in April 2022, be the first",
+  "welcome": {
+    "workflowsAutomationPlatform": "Workflows Automation Platform",
+    "title": "Program differently, develop faster",
+    "description": "500 features make up 80% of all IT developments today. It is therefore possible to offer automation solutions that will save developers considerable time."
+  },
+  "register": {
+    "title": "Estimate the development time and cost of your project",
+    "goToEditor": "Go to your CDC editor",
+    "beFirst": "be the first",
+    "disponible": "Saas version available in",
+    "April": "April",
+    "formTitle": "Join the waiting list for a demo",
+    "placeholderEmail": "Enter your e-mail",
+    "notifyMe": "Notify me"
+  },
+  "about": {
+    "solution": "The solution",
+    "WhetherYouAre": "Whether you are a Start Up, a publisher or an entrepreneur",
+    "weHave": "we have",
+    "developApplication": "to develop your web applications",
+    "engagezVosPartenaires": "engage your partners",
+    "designYourPrototype": "Design your prototype faster, a key step for fundraising",
+    "devFactoryIsWorkflow": "DevFactory is a workflow automation platform, based around an innovative programming methodology",
+    "learnMore": "Learn more"
+  },
+  "mindMap": {
+    "title": "Estimate the development time and the price of your solution thanks to our new generation specifications editor based on the WBS method",
+    "startYourCdc": "Start your CDC"
+  },
+  "banner": {
+    "lackOfResources": "A lack of resources to develop",
+    "technicalHazard": "Technical hazards on your project",
+    "description": "Accelerate your developments: Benefit from the power of the DevFactory platform, dedicated resources and our expertise in new technologies",
+    "discoverTheOffer": "Discover the offer",
+    "businessCase": "See the Business case"
+  },
+  "contact": {
+    "title": "Describe your need to us. We will contact you within 48 hours",
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "send": "Send",
+    "phone": "Phone",
+    "visitOurWebsite": "Visit our website",
+    "follow": "FOLLOW US"
+  }
+}
