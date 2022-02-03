@@ -78,7 +78,7 @@
 @mixin input {
   height: 45px;
   border-radius: 6px;
-  width: 290px;
+  width: 100%;
   background: $input-bg;
   outline: none;
   border: none;
@@ -86,4 +86,9 @@
   &::placeholder {
     color: #b5b5c3;
   }
+}
+
+.required-input {
+  color: #e64747b8;
+  font-size: 0.75rem;
 }
