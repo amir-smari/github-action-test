@@ -1,7 +1,7 @@
 <template>
   <div class="contact-section">
     <div class="contact__wrapper">
-      <div class="contact-form" data-aos="fade-down">
+      <div class="contact-form">
         <p class="form__title">
           {{ $t("contact.title") }}
         </p>
@@ -55,7 +55,7 @@
           </button>
         </form>
       </div>
-      <div class="contact-info" data-aos="fade-left">
+      <div class="contact-info">
         <div class="info__property">
           <span class="info__key">{{ $t("contact.phone") }}</span>
           <span class="info__value">06 18 41 90 27</span>
@@ -66,11 +66,22 @@
         </div>
         <div class="info__property">
           <span class="info__key">{{ $t("contact.visitOurWebsite") }}</span>
-          <span class="info__value">www.sastec-group.com</span>
+          <a href="www.sastec-group.com" target="_blank">
+            <span class="info__value">www.sastec-group.com</span>
+          </a>
         </div>
         <div class="info__property">
           <span class="info__key">{{ $t("contact.follow") }}</span>
-          <img src="@/assets/img/svg/linkdin.svg" alt="linkdin" class="media" />
+          <a
+            href="https://www.linkedin.com/company/devfactory-ai"
+            target="_blank"
+          >
+            <img
+              src="@/assets/img/svg/linkdin.svg"
+              alt="linkdin"
+              class="media"
+            />
+          </a>
         </div>
       </div>
       <span class="dot"></span>
@@ -134,7 +145,7 @@ const submitForm = (event) => {
 <style lang="scss" scoped>
 .contact-section {
   @include flex-center;
-  margin: 8rem auto 5% auto;
+  margin: 4rem;
   position: relative;
   .dot {
     height: 107px;
@@ -151,7 +162,6 @@ const submitForm = (event) => {
   .contact__wrapper {
     position: relative;
     display: flex;
-    width: 60%;
     border-radius: 6px;
     perspective: 1px;
     box-shadow: 0px 3px 12px -1px $grey04, 0px 2px 4px -1px $grey11;
@@ -206,8 +216,7 @@ const submitForm = (event) => {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding-left: 3rem;
-      padding-right: 7rem;
+      padding: 2rem 3rem;
       gap: 2rem;
       border-radius: 0px 6px 6px 0px;
       .info__property {
@@ -231,6 +240,7 @@ const submitForm = (event) => {
           letter-spacing: 0em;
           text-align: left;
           color: $light;
+          white-space: nowrap;
         }
         .media {
           cursor: pointer;
@@ -261,6 +271,11 @@ form {
 @media screen and (max-width: $lg) {
   .dot {
     display: none !important;
+  }
+}
+@media screen and (min-width: $lg) {
+  .contact-section {
+    margin-top: 6rem;
   }
 }
 @media screen and (max-width: $md) {

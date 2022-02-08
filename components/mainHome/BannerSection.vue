@@ -1,15 +1,23 @@
 <template>
   <div class="banner-section">
-    <img src="@/assets/img/svg/studio-logo.svg" alt="logo" data-aos="fade-down"/>
+    <img src="@/assets/img/svg/studio-logo.svg" alt="logo" />
     <span>
       {{ $t("banner.lackOfResources") }} ? {{ $t("banner.technicalHazard") }} ?
     </span>
     <p>{{ $t("banner.description") }} !</p>
     <div class="btns__wrapper">
-      <button class="primary__btn" @click="openModal('flyerModal')" data-aos="fade-right">
+      <button
+        class="primary__btn"
+        @click="openModal('flyerModal')"
+        data-aos="fade-right"
+      >
         {{ $t("banner.discoverTheOffer") }}
       </button>
-      <button class="primary__btn" @click="openModal('businessModal')" data-aos="fade-left">
+      <button
+        class="primary__btn"
+        @click="openModal('businessModal')"
+        data-aos="fade-left"
+      >
         {{ $t("banner.businessCase") }}
       </button>
     </div>
@@ -43,7 +51,7 @@ const openModal = (modalId: string): void => {
 .banner-section {
   background: $primary;
   text-align: center;
-  padding: 3rem 0;
+  padding: 3rem 0.5rem;
   margin: 2% auto;
   @include flex-center;
   flex-direction: column;
