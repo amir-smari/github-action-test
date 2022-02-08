@@ -2,7 +2,7 @@
   <div class="about-section">
     <div class="about">
       <div class="about__wrapper">
-        <div class="about__content" data-aos="fade-right">
+        <div class="about__content">
           <p>
             {{ $t("about.WhetherYouAre") }}, {{ $t("about.weHave") }}
             <strong>{{ $t("about.solution") }}</strong>
@@ -13,32 +13,17 @@
             {{ $t("about.designYourPrototype") }}
           </p>
         </div>
-        <img
-          src="@/assets/img/png/award.png"
-          alt="award"
-          class="about__img"
-          data-aos="fade-up-left"
-        />
+        <img src="@/assets/img/png/award.png" alt="award" class="about__img" />
         <div class="round-shape">
           <img src="@/assets/img/svg/round-shape.svg" alt="award" />
         </div>
       </div>
       <div class="about__wrapper">
-        <img
-          src="@/assets/img/png/stats.png"
-          alt="stats"
-          class="about__img"
-          data-aos="fade-up-right"
-        />
-        <div class="about__content" data-aos="fade-left">
+        <img src="@/assets/img/png/stats.png" alt="stats" class="about__img" />
+        <div class="about__content">
           {{ $t("about.devFactoryIsWorkflow") }}
 
-          <button
-            class="primary__btn"
-            @click="showModal = true"
-            data-aos="fade-left"
-            data-aos-duration="1500"
-          >
+          <button class="primary__btn" @click="showModal = true">
             <span> {{ $t("about.learnMore") }} </span>
             <img src="@/assets/img/svg/light-arrow.svg" alt="arrow" />
           </button>
@@ -59,7 +44,7 @@
 
     <div class="about">
       <div class="about__wrapper">
-        <div class="about__content detail" data-aos="fade-right">
+        <div class="about__content detail">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum rhoncus
           sed non libero convallis maecenas amet arcu, elit. Enim eget blandit
           elit commodo. Vehicula id ipsum, ligula arcu neque eu. Leo sit turpis
@@ -70,7 +55,6 @@
           src="@/assets/img/png/overview.png"
           alt="overview"
           class="about__img"
-          data-aos="fade-down-left"
         />
       </div>
 
@@ -79,9 +63,8 @@
           src="@/assets/img/png/dashboard.png"
           alt="dashboard"
           class="about__img"
-          data-aos="fade-up-right"
         />
-        <div class="about__content detail" data-aos="fade-left">
+        <div class="about__content detail">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum rhoncus
           sed non libero convallis maecenas amet arcu, elit. Enim eget blandit
           elit commodo. Vehicula id ipsum, ligula arcu neque eu. Leo sit turpis
@@ -105,7 +88,7 @@ const showModal = ref(false);
     margin-top: 14%;
   }
   .about {
-    margin-bottom: 10%;
+    margin-bottom: 4rem;
     .about__wrapper {
       @include flex-around;
       position: relative;
@@ -168,12 +151,14 @@ const showModal = ref(false);
       }
       .about__wrapper {
         flex-direction: column;
-
+        img {
+          max-width: 300px;
+        }
         .about__content {
           width: 80%;
           text-align: center;
           .primary__btn {
-            margin: auto;
+            margin: 1rem auto;
           }
         }
       }
@@ -182,12 +167,13 @@ const showModal = ref(false);
 }
 @media screen and (max-width: $sm) {
   .about-section {
-    margin-top: 40%;
+    margin-top: 5rem;
     .about {
       .about__wrapper {
         margin: 60px auto;
         .about__img {
           width: 70%;
+          max-width: 250px;
         }
         .about__content {
           @include small-text;
