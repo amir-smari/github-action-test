@@ -38,7 +38,7 @@
   },
   "contact": {
     "title": "Décrivez-nous votre besoin. Nous vous contacterons sous 48H",
-    "nom": "Nom",
+    "name": "Nom",
     "email": "E-mail",
     "subject": "Sujet",
     "send": "Envoyer",

@@ -6,9 +6,7 @@
 
 <style lang="scss" scoped>
 header {
-  width: 100%;
   background: $primary;
-  margin-top: 0;
   text-align: center;
   @include x-small-text;
   color: #fff;

@@ -1,90 +1,106 @@
 <template>
-  <div class="welcome-section">
+  <div class="welcome-section aos-init aos-animate" data-aos="fade-up">
     <img src="@/assets/img/svg/circle.svg" alt="circle" class="circle" />
-    <img src="@/assets/img/svg/disque.svg" alt="disque" class="disque" />
-    <img src="@/assets/img/svg/hexagone.svg" alt="hexagone" class="hexagone" />
-    <div class="welcome-section__header">
-      <img src="@/assets/img/svg/header-logo.svg" alt="logo" />
-      <div class="title">{{ $t("welcome.workflowsAutomationPlatform") }}</div>
-    </div>
+    <div class="disque"></div>
+    <div class="hexagone"></div>
+    <div class="semi-circle"></div>
+
     <div class="welcome-section__content">
-      <p>{{ $t("welcome.title") }}</p>
-      <span>
-        <q> {{ $t("welcome.description") }}</q>
-      </span>
+      <div class="welcome-section__header">
+        <img src="@/assets/img/svg/header-logo.svg" alt="logo" />
+        <p class="title">{{ $t("welcome.workflowsAutomationPlatform") }}</p>
+      </div>
+      <div class="welcome-section__desc">
+        <h1>{{ $t("welcome.title") }}</h1>
+        <p>
+          <q>
+            {{ $t("welcome.description") }}
+          </q>
+        </p>
+      </div>
+      <div class="welcome-section_illustrator">
+        <img src="@/assets/img/png/community.png" alt="community" />
+      </div>
     </div>
-    <img src="@/assets/img/png/community.png" alt="community" />
   </div>
 </template>
 
 <style lang="scss" scoped>
 .welcome-section {
-  background-image: url("@/assets/img/png/community-bg.png");
-  background-size: 100vw 100%;
-  background-repeat: no-repeat;
-  text-align: center;
-  margin: auto;
-  height: 765px;
+  // background-image: url("@/assets/img/png/community-bg.png");
+  background-color: #fff;
+  height: 90vh;
   position: relative;
+  clip-path: ellipse(123% 100% at 50% 0%);
   .disque {
     position: absolute;
-    right: 138px;
-    top: 119px;
+    bottom: 20%;
+    right: 15%;
+    background-color: #7239ea;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   }
   .circle {
     position: absolute;
-    left: 302px;
-    top: 123px;
+    left: 15%;
+    bottom: 20%;
   }
   .hexagone {
     position: absolute;
-    left: 98px;
-    bottom: 225px;
+    left: 15%;
+    top: 20%;
+    background-image: url("@/assets/img/png/hexagone.png");
+    width: 5.7rem;
+    height: 6rem;
+    background-repeat: no-repeat;
   }
 
+  .semi-circle {
+    position: absolute;
+    background-image: url("@/assets/img/png/ellipse.png");
+    right: 0%;
+    top: 10%;
+    background-repeat: no-repeat;
+    height: 14rem;
+    width: 6rem;
+  }
   .welcome-section__header {
+    .title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 1rem;
+    }
     padding: 30px;
     @include flex-center;
     flex-direction: column;
-    font-family: "Poppins-semibold";
     font-size: 1.5rem;
-    font-style: normal;
     font-weight: 600;
     line-height: 2rem;
     letter-spacing: 0px;
     text-align: center;
-
-    img {
-      margin-bottom: 20px;
-    }
   }
   .welcome-section__content {
-    width: 57.8%;
+    width: 52%;
     margin: auto;
-    text-align: center;
-
-    span {
-      font-family: "Poppins-semibold";
-      font-size: 1.08rem;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 26px;
-      letter-spacing: 0px;
+    text-align: justify;
+    @include flex-evenly;
+    flex-direction: column;
+    height: 100%;
+    .welcome-section__desc {
       text-align: center;
-      color: $grey3;
-      text-align: justify;
-    }
-    p {
-      font-family: "Poppins-medium";
-      font-size: 2rem;
-      font-style: medium;
-      font-weight: 500;
-      line-height: 48px;
-      letter-spacing: 0px;
-      text-align: center;
-      color: $grey1;
-      margin-top: 3%;
-      margin-bottom: 2%;
+      h1 {
+        margin-bottom: 1rem;
+        font-weight: 500;
+      }
+      p {
+        font-weight: 600;
+        line-height: 26px;
+        letter-spacing: 0px;
+        color: $grey3;
+        text-align: center;
+      }
     }
   }
 }

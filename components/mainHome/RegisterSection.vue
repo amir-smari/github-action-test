@@ -1,15 +1,19 @@
 <template lang="">
   <div class="register-section">
-    <div class="register-section__title">
+    <div class="register-section__title" data-aos="fade-down">
       {{ $t("register.title") }}
     </div>
     <a href="#mindmap">
-      <button class="outline__btn">
+      <button class="outline__btn" data-aos="fade-down">
         <span> {{ $t("register.goToEditor") }}</span>
         <img src="@/assets/img/svg/arrow.svg" alt="arrow" />
       </button>
     </a>
-    <div class="register-section__form">
+    <div
+      class="register-section__form"
+      data-aos="fade-up"
+      data-aos-duration="1000"
+    >
       <span class="form-title"
         >{{ $t("register.disponible") }}
         <span>{{ $t("register.April") }} 2022</span>,
@@ -18,12 +22,45 @@
       </span>
       <span class="form-title-muted"> {{ $t("register.formTitle") }}</span>
       <div class="form__wrapper">
-        <input type="text" :placeholder="$t('register.placeholderEmail')" />
-        <button class="primary__btn">{{ $t("register.notifyMe") }}</button>
+        <div class="register-input">
+          <input
+            type="email"
+            :placeholder="$t('register.placeholderEmail')"
+            v-model="formValue.email"
+          />
+          <span class="required-input" v-show="checkInput.isEmailValid"
+            >email is required</span
+          >
+        </div>
+        <button class="primary__btn" @click="handelRegisterBtn">
+          {{ $t("register.notifyMe") }}
+        </button>
       </div>
     </div>
   </div>
 </template>
+
+<script lang="ts" setup>
+let checkInput = ref({
+  isEmailValid: false,
+});
+const formValue = ref({
+  email: "",
+});
+const handelRegisterBtn = (event) => {
+  event.preventDefault();
+  //mailAddress Validation
+  const regEmail =
+    /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+  if (!regEmail.test(formValue.value.email)) {
+    checkInput.value.isEmailValid = true;
+  } else checkInput.value.isEmailValid = false;
+  if (!checkInput.value.isEmailValid) {
+    console.log("submited");
+    formValue.value.email = "";
+  }
+};
+</script>
 
 <style lang="scss" scoped>
 .register-section {
@@ -40,10 +77,7 @@
     text-decoration: none;
   }
   .register-section__title {
-    //styleName: SemiBold/H2-SB;
-    font-family: "Poppins-semibold";
     font-size: 1.5rem;
-    font-style: normal;
     font-weight: 600;
     line-height: 36px;
     letter-spacing: 0px;
@@ -53,9 +87,17 @@
     color: $primary;
     background: $light;
     @include btn;
-    @include small-text;
     margin: 26px auto;
-    font-weight: 600 !important;
+    font-weight: 500;
+    gap: 0.5rem;
+    box-shadow: 0px 3.85714px 15.4286px -1.28571px rgba(24, 28, 50, 0.4),
+      0px 2.57143px 5.14286px -1.28571px rgba(24, 28, 50, 0.1);
+    &:hover {
+      background: darken($light, 10%);
+    }
+    span {
+      font-family: Poppins;
+    }
   }
   .register-section__form {
     width: 80%;
@@ -69,36 +111,32 @@
     border-radius: 12px;
     padding: 3%;
     .form-title {
-      font-family: "Poppins-medium";
       font-size: 2rem;
-      font-style: normal;
       font-weight: 500;
       line-height: 3rem;
       letter-spacing: 0px;
       span {
-        font-family: "Poppins-bold";
         color: $primary;
         font-weight: 700;
       }
     }
     .form-title-muted {
-      font-family: "Poppins-medium";
       font-size: 1.05rem;
-      font-style: normal;
       font-weight: 500;
       line-height: 26px;
       letter-spacing: 0px;
       text-align: center;
-
       color: $grey3;
     }
     .form__wrapper {
-      @include flex-center;
-      column-gap: 10px;
+      display: flex;
+      gap: 1rem;
+      align-items: baseline;
       margin-top: 30px;
-      margin-bottom: 3%;
+      margin-bottom: 0.5rem;
       .primary__btn {
         @include btn;
+
         padding: 12px;
         background: $primary;
         color: $light;
@@ -108,12 +146,22 @@
         line-height: 20px;
         letter-spacing: 0em;
         text-align: center;
+        box-shadow: 0px 1px 4px -1px rgba(24, 28, 50, 0.2);
+        &:hover {
+          background: darken($primary, 10%);
+        }
       }
       input {
         @include input;
       }
     }
   }
+}
+.register-input {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  gap: 0.25rem;
 }
 @media screen and (max-width: $lg) {
   .register-section {

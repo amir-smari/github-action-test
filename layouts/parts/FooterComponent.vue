@@ -23,10 +23,7 @@ footer {
   height: 80px;
   width: 100%;
   color: $light;
-  //styleName: Medium/H3-M;
-  font-family: "Poppins-medium";
   font-size: 1rem;
-  font-style: normal;
   font-weight: 500;
   line-height: 1.5rem;
   letter-spacing: 0px;

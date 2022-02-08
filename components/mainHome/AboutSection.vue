@@ -2,7 +2,7 @@
   <div class="about-section">
     <div class="about">
       <div class="about__wrapper">
-        <div class="about__content">
+        <div class="about__content" data-aos="fade-right">
           <p>
             {{ $t("about.WhetherYouAre") }}, {{ $t("about.weHave") }}
             <strong>{{ $t("about.solution") }}</strong>
@@ -13,17 +13,32 @@
             {{ $t("about.designYourPrototype") }}
           </p>
         </div>
-        <img src="@/assets/img/png/award.png" alt="award" class="about__img" />
+        <img
+          src="@/assets/img/png/award.png"
+          alt="award"
+          class="about__img"
+          data-aos="fade-up-left"
+        />
         <div class="round-shape">
           <img src="@/assets/img/svg/round-shape.svg" alt="award" />
         </div>
       </div>
       <div class="about__wrapper">
-        <img src="@/assets/img/png/stats.png" alt="stats" class="about__img" />
-        <div class="about__content">
+        <img
+          src="@/assets/img/png/stats.png"
+          alt="stats"
+          class="about__img"
+          data-aos="fade-up-right"
+        />
+        <div class="about__content" data-aos="fade-left">
           {{ $t("about.devFactoryIsWorkflow") }}
 
-          <button class="primary__btn" @click="showModal = true">
+          <button
+            class="primary__btn"
+            @click="showModal = true"
+            data-aos="fade-left"
+            data-aos-duration="1500"
+          >
             <span> {{ $t("about.learnMore") }} </span>
             <img src="@/assets/img/svg/light-arrow.svg" alt="arrow" />
           </button>
@@ -44,7 +59,7 @@
 
     <div class="about">
       <div class="about__wrapper">
-        <div class="about__content detail">
+        <div class="about__content detail" data-aos="fade-right">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum rhoncus
           sed non libero convallis maecenas amet arcu, elit. Enim eget blandit
           elit commodo. Vehicula id ipsum, ligula arcu neque eu. Leo sit turpis
@@ -55,6 +70,7 @@
           src="@/assets/img/png/overview.png"
           alt="overview"
           class="about__img"
+          data-aos="fade-down-left"
         />
       </div>
 
@@ -63,8 +79,9 @@
           src="@/assets/img/png/dashboard.png"
           alt="dashboard"
           class="about__img"
+          data-aos="fade-up-right"
         />
-        <div class="about__content detail">
+        <div class="about__content detail" data-aos="fade-left">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum rhoncus
           sed non libero convallis maecenas amet arcu, elit. Enim eget blandit
           elit commodo. Vehicula id ipsum, ligula arcu neque eu. Leo sit turpis
@@ -84,7 +101,9 @@ const showModal = ref(false);
 
 <style lang="scss" scoped>
 .about-section {
-  margin-top: 10%;
+  .about:nth-child(1) {
+    margin-top: 14%;
+  }
   .about {
     margin-bottom: 10%;
     .about__wrapper {
@@ -101,18 +120,14 @@ const showModal = ref(false);
       .about__content {
         width: 33%;
         color: $grey1;
-        font-family: "Poppins-semibold";
         font-size: 1.3rem;
-        font-style: normal;
         font-weight: 600;
         line-height: 39px;
         letter-spacing: 0px;
         text-align: left;
         strong {
-          font-family: "Poppins-bold";
-          font-weight: 800;
+          font-weight: 700;
           font-size: 1.5rem;
-          font-style: bold;
         }
 
         .primary__btn {
@@ -120,7 +135,20 @@ const showModal = ref(false);
           background: $primary;
           color: $light;
           margin-top: 15px;
-          padding: 11px;
+          padding: 0.5rem 1rem;
+          box-shadow: 0px 3px 12px -1px rgba(24, 28, 50, 0.4),
+            0px 2px 4px -1px rgba(24, 28, 50, 0.1);
+          gap: 0.5rem;
+
+          &:hover {
+            background: darken($primary, 10%);
+          }
+          img {
+            transform: scale(0.8);
+          }
+          span {
+            font-family: Poppins;
+          }
         }
       }
 

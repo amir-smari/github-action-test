@@ -1,9 +1,7 @@
-Dockerfile
-
-# Ignore .git folder
-.git
-
-node_modules/
 node_modules
+Dockerfile
+Dockerfile.dev
 .git
 .gitignore
+docker-compose*
+# .nuxt

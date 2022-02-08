@@ -1,15 +1,15 @@
 <template>
   <div class="banner-section">
-    <img src="@/assets/img/svg/studio-logo.svg" alt="logo" />
+    <img src="@/assets/img/svg/studio-logo.svg" alt="logo" data-aos="fade-down"/>
     <span>
       {{ $t("banner.lackOfResources") }} ? {{ $t("banner.technicalHazard") }} ?
     </span>
     <p>{{ $t("banner.description") }} !</p>
     <div class="btns__wrapper">
-      <button class="primary__btn" @click="openModal('flyerModal')">
+      <button class="primary__btn" @click="openModal('flyerModal')" data-aos="fade-right">
         {{ $t("banner.discoverTheOffer") }}
       </button>
-      <button class="primary__btn" @click="openModal('businessModal')">
+      <button class="primary__btn" @click="openModal('businessModal')" data-aos="fade-left">
         {{ $t("banner.businessCase") }}
       </button>
     </div>
@@ -43,20 +43,17 @@ const openModal = (modalId: string): void => {
 .banner-section {
   background: $primary;
   text-align: center;
-  padding: 5%;
+  padding: 3rem 0;
   margin: 2% auto;
   @include flex-center;
   flex-direction: column;
   text-align: center;
   span {
-    font-family: "Poppins-medium";
     font-size: 1.3rem;
-    font-style: normal;
     font-weight: 500;
     line-height: 32px;
     letter-spacing: 0px;
     text-align: center;
-
     margin: 2% auto;
   }
   p {
@@ -75,15 +72,17 @@ const openModal = (modalId: string): void => {
     column-gap: 10px;
     .primary__btn {
       @include btn;
-      padding: 16px;
-      font-size: 1.31rem;
+      padding: 0.75rem 2rem;
       font-style: normal;
       font-weight: 700;
       line-height: 26px;
       letter-spacing: 0em;
       text-align: center;
-
+      box-shadow: 0px 1.31818px 5.27273px -1.31818px rgba(24, 28, 50, 0.2);
       color: $grey2;
+      &:hover {
+        background: darken($light, 10%);
+      }
     }
   }
 }

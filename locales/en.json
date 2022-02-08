@@ -38,7 +38,7 @@
   },
   "contact": {
     "title": "Describe your need to us. We will contact you within 48 hours",
-    "nom": "Name",
+    "name": "Name",
     "email": "Email",
     "subject": "Subject",
     "send": "Send",

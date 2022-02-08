@@ -1,25 +1,61 @@
 <template>
   <div class="contact-section">
-    <span class="dot"></span>
     <div class="contact__wrapper">
-      <div class="contact-form">
+      <div class="contact-form" data-aos="fade-down">
         <p class="form__title">
           {{ $t("contact.title") }}
         </p>
-        <div class="input__wrapper">
-          <input type="text" :placeholder="$t('contact.nom')" />
-          <input type="text" :placeholder="$t('contact.email')" />
-        </div>
-        <input
-          type="text"
-          :placeholder="$t('contact.subject')"
-          class="form__control"
-        />
+        <form ref="formContact">
+          <div>
+            <input
+              type="text"
+              :placeholder="$t('contact.name')"
+              v-model="formValue.name"
+            />
+            <span class="required-input" v-show="checkInput.isNameValid"
+              >name is required</span
+            >
+          </div>
+          <div>
+            <input
+              type="email"
+              :placeholder="$t('contact.email')"
+              v-model="formValue.email"
+            />
+            <span class="required-input" v-show="checkInput.isEmailValid"
+              >email is required</span
+            >
+          </div>
 
-        <textarea id="story" name="story" placeholder="Message"></textarea>
-        <button class="btn__primary">{{ $t("contact.send") }}</button>
+          <div class="subject">
+            <input
+              type="text"
+              :placeholder="$t('contact.subject')"
+              class="form__control"
+              v-model="formValue.subject"
+            />
+            <span class="required-input" v-show="checkInput.isSubjectValid"
+              >subject is required</span
+            >
+          </div>
+          <div class="message">
+            <textarea
+              id="story"
+              name="story"
+              placeholder="Message"
+              v-model="formValue.message"
+            ></textarea>
+            <span class="required-input" v-show="checkInput.isMessageValid"
+              >Message is required</span
+            >
+          </div>
+
+          <button class="btn__primary" @click="submitForm">
+            {{ $t("contact.send") }}
+          </button>
+        </form>
       </div>
-      <div class="contact-info">
+      <div class="contact-info" data-aos="fade-left">
         <div class="info__property">
           <span class="info__key">{{ $t("contact.phone") }}</span>
           <span class="info__value">06 18 41 90 27</span>
@@ -37,14 +73,68 @@
           <img src="@/assets/img/svg/linkdin.svg" alt="linkdin" class="media" />
         </div>
       </div>
+      <span class="dot"></span>
     </div>
   </div>
 </template>
 
+<script lang="ts" setup>
+const formContact = ref(null);
+let checkInput = ref({
+  isNameValid: false,
+  isEmailValid: false,
+  isSubjectValid: false,
+  isMessageValid: false,
+});
+const formValue = ref({
+  name: "",
+  email: "",
+  subject: "",
+  message: "",
+});
+const submitForm = (event) => {
+  event.preventDefault();
+  //Name Validation
+  const regName = /^[a-zA-Z]+$/;
+  if (!regName.test(formValue.value.name)) {
+    checkInput.value.isNameValid = true;
+  } else checkInput.value.isNameValid = false;
+  //mailAddress Validation
+  const regEmail =
+    /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+  if (!regEmail.test(formValue.value.email)) {
+    checkInput.value.isEmailValid = true;
+  } else checkInput.value.isEmailValid = false;
+  //Subject Validation
+  if (formValue.value.subject.length < 4) {
+    checkInput.value.isSubjectValid = true;
+  } else checkInput.value.isSubjectValid = false;
+
+  //message Validation
+  if (formValue.value.message.length < 10) {
+    checkInput.value.isMessageValid = true;
+  } else checkInput.value.isMessageValid = false;
+
+  if (
+    !checkInput.value.isNameValid &&
+    !checkInput.value.isEmailValid &&
+    !checkInput.value.isSubjectValid &&
+    !checkInput.value.isMessageValid
+  ) {
+    console.log("submited");
+    formContact.value.reset();
+    formValue.value.name = "";
+    formValue.value.email = "";
+    formValue.value.subject = "";
+    formValue.value.message = "";
+  }
+};
+</script>
+
 <style lang="scss" scoped>
 .contact-section {
   @include flex-center;
-  margin: 5% auto;
+  margin: 8rem auto 5% auto;
   position: relative;
   .dot {
     height: 107px;
@@ -54,24 +144,24 @@
     display: block;
     position: absolute;
     top: 0;
-    left: 7%;
+    left: -3rem;
     transform: translate(0%, -50%);
+    z-index: -1;
   }
   .contact__wrapper {
+    position: relative;
     display: flex;
-    width: 80%;
+    width: 60%;
     border-radius: 6px;
-    overflow: hidden;
     perspective: 1px;
     box-shadow: 0px 3px 12px -1px $grey04, 0px 2px 4px -1px $grey11;
     .contact-form {
       background: $light;
-      width: 60%;
-      padding: 6%;
+      flex-grow: 1;
+      padding: 2rem 3rem;
+      border-radius: 6px 0px 0px 6px;
       .form__title {
-        font-family: "Poppins-semibold";
         font-size: 1.18rem;
-        font-style: normal;
         font-weight: 600;
         line-height: 29px;
         letter-spacing: 0em;
@@ -82,13 +172,13 @@
       textarea {
         @include input;
         display: block;
-        margin-bottom: 20px;
+        margin-bottom: 0.25rem;
       }
       .input__wrapper {
         @include flex-center;
         column-gap: 10px;
         input {
-          width: 50%;
+          width: 100%;
         }
       }
       .form__control {
@@ -105,47 +195,65 @@
         width: 100%;
         background: $primary;
         color: $light;
+
+        &:hover {
+          background: darken($primary, 10%);
+        }
       }
     }
     .contact-info {
       background: $primary;
-      width: 40%;
-      padding-left: 6%;
-      padding-top: 10%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 3rem;
+      padding-right: 7rem;
+      gap: 2rem;
+      border-radius: 0px 6px 6px 0px;
       .info__property {
         flex-direction: column;
         @include flex-start;
         align-items: flex-start;
-        margin-bottom: 35px;
         text-align: start;
 
         .info__key {
-          font-family: "Poppins-semibold";
           font-size: 1.12rem;
-          font-style: normal;
           font-weight: 600;
           line-height: 27px;
           letter-spacing: 0em;
           text-align: left;
-
           color: $light;
-          margin-bottom: 10px;
         }
         .info__value {
-          font-family: "Poppins-medium";
           font-size: 0.8rem;
-          font-style: normal;
           font-weight: 500;
           line-height: 21px;
           letter-spacing: 0em;
           text-align: left;
-
           color: $light;
         }
         .media {
           cursor: pointer;
         }
       }
+    }
+  }
+}
+form {
+  display: grid;
+  gap: 0.75rem;
+}
+@media screen and (min-width: $lg) {
+  form {
+    grid-template-columns: 1fr 1fr;
+    .subject {
+      grid-column: 1/3;
+    }
+    .message {
+      grid-column: 1/3;
+    }
+    button {
+      grid-column: 1/3;
     }
   }
 }
