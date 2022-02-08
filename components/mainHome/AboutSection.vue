@@ -23,11 +23,19 @@
         <div class="about__content">
           {{ $t("about.devFactoryIsWorkflow") }}
 
-          <button class="primary__btn">
+          <button class="primary__btn" @click="showModal = true">
             <span> {{ $t("about.learnMore") }} </span>
             <img src="@/assets/img/svg/light-arrow.svg" alt="arrow" />
           </button>
         </div>
+        <ModalComponent v-show="showModal" @close-modal="showModal = false">
+          <iframe
+            src="../assets/pdf/project-genesis.pdf"
+            frameborder="0"
+            width="100%"
+            height="100%"
+          ></iframe>
+        </ModalComponent>
         <div class="hexagone-shape">
           <img src="@/assets/img/svg/hexagone-shape.svg" alt="award" />
         </div>
@@ -67,6 +75,12 @@
     </div>
   </div>
 </template>
+
+<script lang="ts" setup>
+import { ref } from "vue";
+import ModalComponent from "@/components/shared/ModalComponent.vue";
+const showModal = ref(false);
+</script>
 
 <style lang="scss" scoped>
 .about-section {
