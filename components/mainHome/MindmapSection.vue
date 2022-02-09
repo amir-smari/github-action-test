@@ -10,11 +10,29 @@
       data-aos-easing="linear"
       data-aos-duration="1000"
     />
-    <button class="primary__btn">
+    <button class="primary__btn" @click="openModal">
       {{ $t("mindMap.startYourCdc") }}
     </button>
+    <ModalComponent v-show="showModal" @close-modal="closeModal">
+      <iframe :src="src" frameborder="0" width="100%" height="100%"></iframe>
+    </ModalComponent>
   </div>
 </template>
+
+<script lang="ts" setup>
+import { ref } from "vue";
+import ModalComponent from "@/components/shared/ModalComponent.vue";
+const showModal = ref(false);
+const src = ref("");
+const openModal = () => {
+  showModal.value = true;
+  src.value = "http://141.94.172.180:81/#/mindmap-demo";
+};
+const closeModal = () => {
+  showModal.value = false;
+  src.value = "";
+};
+</script>
 <style lang="scss" scoped>
 .mindmap-section {
   background-image: url("@/assets/img/png/icon-bg.png");

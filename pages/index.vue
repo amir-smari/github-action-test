@@ -58,11 +58,18 @@ export default {
     onScroll(e) {
       this.windowTop = e.target.documentElement.scrollTop;
     },
+    trackClicks() {
+      this.$gtag.event("latest-release-click", {
+        event_category: "documentaion",
+        event_label: "Latest Release Button Clicked",
+        value: 1,
+      });
+    },
   },
   mounted() {
     window.addEventListener("scroll", this.onScroll);
   },
-  beforeDestroy() {
+  beforeUnmount() {
     window.removeEventListener("scroll", this.onScroll);
   },
 };

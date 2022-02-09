@@ -27,7 +27,7 @@
             v-model="formValue.email"
           />
           <span class="required-input" v-show="checkInput.isEmailValid"
-            >email is required</span
+            >{{$t('contact.email') + ' ' + $t('isRequired')}}</span
           >
         </div>
         <button class="primary__btn" @click="handelRegisterBtn">

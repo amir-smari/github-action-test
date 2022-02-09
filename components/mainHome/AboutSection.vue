@@ -23,14 +23,14 @@
         <div class="about__content">
           {{ $t("about.devFactoryIsWorkflow") }}
 
-          <button class="primary__btn" @click="showModal = true">
+          <button class="primary__btn" @click="openModal">
             <span> {{ $t("about.learnMore") }} </span>
             <img src="@/assets/img/svg/light-arrow.svg" alt="arrow" />
           </button>
         </div>
-        <ModalComponent v-show="showModal" @close-modal="showModal = false">
+        <ModalComponent v-show="showModal" @close-modal="closeModal">
           <iframe
-            src="../assets/pdf/project-genesis.pdf"
+            :src="src"
             frameborder="0"
             width="100%"
             height="100%"
@@ -80,6 +80,15 @@
 import { ref } from "vue";
 import ModalComponent from "@/components/shared/ModalComponent.vue";
 const showModal = ref(false);
+const src = ref("");
+const openModal = () => {
+  showModal.value = true;
+  src.value = "../assets/pdf/project-genesis.pdf";
+};
+const closeModal = () => {
+  showModal.value = false;
+  src.value = "";
+};
 </script>
 
 <style lang="scss" scoped>

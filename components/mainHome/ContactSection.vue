@@ -1,5 +1,5 @@
 <template>
-  <div class="contact-section">
+  <form class="contact-section" @submit.prevent="handleSubmit">
     <div class="contact__wrapper">
       <div class="contact-form">
         <p class="form__title">
@@ -13,7 +13,7 @@
               v-model="formValue.name"
             />
             <span class="required-input" v-show="checkInput.isNameValid"
-              >name is required</span
+              >{{$t('contact.name') + ' ' + $t('isRequired')}}</span
             >
           </div>
           <div>
@@ -23,7 +23,7 @@
               v-model="formValue.email"
             />
             <span class="required-input" v-show="checkInput.isEmailValid"
-              >email is required</span
+              >{{$t('contact.email') + ' ' + $t('isRequired')}}</span
             >
           </div>
 
@@ -35,7 +35,7 @@
               v-model="formValue.subject"
             />
             <span class="required-input" v-show="checkInput.isSubjectValid"
-              >subject is required</span
+              >{{$t('contact.subject') + ' ' + $t('isRequired')}}</span
             >
           </div>
           <div class="message">
@@ -46,7 +46,7 @@
               v-model="formValue.message"
             ></textarea>
             <span class="required-input" v-show="checkInput.isMessageValid"
-              >Message is required</span
+              >Message {{$t('isRequired')}}</span
             >
           </div>
 
@@ -86,7 +86,7 @@
       </div>
       <span class="dot"></span>
     </div>
-  </div>
+  </form>
 </template>
 
 <script lang="ts" setup>
@@ -103,6 +103,12 @@ const formValue = ref({
   subject: "",
   message: "",
 });
+const handleSubmit = async () => {
+  const { data, error } = (await $fetch(`/api/contact`, {
+    method: "POST",
+    body: { form: formValue.value },
+  })) as any;
+};
 const submitForm = (event) => {
   event.preventDefault();
   //Name Validation
@@ -133,6 +139,7 @@ const submitForm = (event) => {
     !checkInput.value.isMessageValid
   ) {
     console.log("submited");
+    handleSubmit()
     formContact.value.reset();
     formValue.value.name = "";
     formValue.value.email = "";

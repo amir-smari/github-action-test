@@ -45,5 +45,6 @@
     "phone": "Téléphone",
     "visitOurWebsite": "Visitez notre site internet",
     "follow": "SUIVEZ-NOUS"
-  }
+  },
+  "isRequired":"is required"
 }
