@@ -5,32 +5,55 @@
         <p class="form__title">
           {{ $t("contact.title") }}
         </p>
-        <div class="input__wrapper">
-          <input
-            type="text"
-            v-model="formFields.name"
-            :placeholder="$t('contact.name')"
-          />
-          <input
-            type="text"
-            v-model="formFields.email"
-            :placeholder="$t('contact.email')"
-          />
-        </div>
-        <input
-          type="text"
-          v-model="formFields.subject"
-          :placeholder="$t('contact.subject')"
-          class="form__control"
-        />
+        <form ref="formContact">
+          <div>
+            <input
+              type="text"
+              :placeholder="$t('contact.name')"
+              v-model="formValue.name"
+            />
+            <span class="required-input" v-show="checkInput.isNameValid"
+              >{{$t('contact.name') + ' ' + $t('isRequired')}}</span
+            >
+          </div>
+          <div>
+            <input
+              type="email"
+              :placeholder="$t('contact.email')"
+              v-model="formValue.email"
+            />
+            <span class="required-input" v-show="checkInput.isEmailValid"
+              >{{$t('contact.email') + ' ' + $t('isRequired')}}</span
+            >
+          </div>
 
-        <textarea
-          id="story"
-          name="story"
-          v-model="formFields.message"
-          placeholder="Message"
-        ></textarea>
-        <button class="btn__primary">{{ $t("contact.send") }}</button>
+          <div class="subject">
+            <input
+              type="text"
+              :placeholder="$t('contact.subject')"
+              class="form__control"
+              v-model="formValue.subject"
+            />
+            <span class="required-input" v-show="checkInput.isSubjectValid"
+              >{{$t('contact.subject') + ' ' + $t('isRequired')}}</span
+            >
+          </div>
+          <div class="message">
+            <textarea
+              id="story"
+              name="story"
+              placeholder="Message"
+              v-model="formValue.message"
+            ></textarea>
+            <span class="required-input" v-show="checkInput.isMessageValid"
+              >Message {{$t('isRequired')}}</span
+            >
+          </div>
+
+          <button class="btn__primary" @click="submitForm">
+            {{ $t("contact.send") }}
+          </button>
+        </form>
       </div>
       <div class="contact-info">
         <div class="info__property">
@@ -65,23 +88,67 @@
     </div>
   </form>
 </template>
+
 <script lang="ts" setup>
-import { ref } from "vue";
-const formFields = ref({
+const formContact = ref(null);
+let checkInput = ref({
+  isNameValid: false,
+  isEmailValid: false,
+  isSubjectValid: false,
+  isMessageValid: false,
+});
+const formValue = ref({
   name: "",
   email: "",
-  message: "",
   subject: "",
+  message: "",
 });
-//TODO add form validation
-//WE can change the method fetch with axios
 const handleSubmit = async () => {
   const { data, error } = (await $fetch(`/api/contact`, {
     method: "POST",
-    body: { form: formFields.value },
+    body: { form: formValue.value },
   })) as any;
 };
+const submitForm = (event) => {
+  event.preventDefault();
+  //Name Validation
+  const regName = /^[a-zA-Z]+$/;
+  if (!regName.test(formValue.value.name)) {
+    checkInput.value.isNameValid = true;
+  } else checkInput.value.isNameValid = false;
+  //mailAddress Validation
+  const regEmail =
+    /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+  if (!regEmail.test(formValue.value.email)) {
+    checkInput.value.isEmailValid = true;
+  } else checkInput.value.isEmailValid = false;
+  //Subject Validation
+  if (formValue.value.subject.length < 4) {
+    checkInput.value.isSubjectValid = true;
+  } else checkInput.value.isSubjectValid = false;
+
+  //message Validation
+  if (formValue.value.message.length < 10) {
+    checkInput.value.isMessageValid = true;
+  } else checkInput.value.isMessageValid = false;
+
+  if (
+    !checkInput.value.isNameValid &&
+    !checkInput.value.isEmailValid &&
+    !checkInput.value.isSubjectValid &&
+    !checkInput.value.isMessageValid
+  ) {
+    console.log("submited");
+    handleSubmit()
+    formContact.value.reset();
+    formValue.value.name = "";
+    formValue.value.email = "";
+    formValue.value.subject = "";
+    formValue.value.message = "";
+  }
+};
 </script>
+
 <style lang="scss" scoped>
 .contact-section {
   @include flex-center;
@@ -122,13 +189,13 @@ const handleSubmit = async () => {
       textarea {
         @include input;
         display: block;
-        margin-bottom: 20px;
+        margin-bottom: 0.25rem;
       }
       .input__wrapper {
         @include flex-center;
         column-gap: 10px;
         input {
-          width: 50%;
+          width: 100%;
         }
       }
       .form__control {
@@ -186,6 +253,24 @@ const handleSubmit = async () => {
           cursor: pointer;
         }
       }
+    }
+  }
+}
+form {
+  display: grid;
+  gap: 0.75rem;
+}
+@media screen and (min-width: $lg) {
+  form {
+    grid-template-columns: 1fr 1fr;
+    .subject {
+      grid-column: 1/3;
+    }
+    .message {
+      grid-column: 1/3;
+    }
+    button {
+      grid-column: 1/3;
     }
   }
 }
