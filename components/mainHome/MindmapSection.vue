@@ -26,7 +26,7 @@ const showModal = ref(false);
 const src = ref("");
 const openModal = () => {
   showModal.value = true;
-  src.value = "http://141.94.172.180:81/#/mindmap-demo";
+  src.value = "https://admin.devfactory.ai/#/mindmap-demo";
 };
 const closeModal = () => {
   showModal.value = false;
