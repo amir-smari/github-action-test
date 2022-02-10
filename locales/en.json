@@ -7,7 +7,6 @@
   },
   "register": {
     "title": "Estimate the development time and cost of your project",
-    "goToEditor": "Go to your CDC editor",
     "beFirst": "be the first",
     "disponible": "Saas version available in",
     "April": "April",
@@ -27,7 +26,7 @@
   },
   "mindMap": {
     "title": "Estimate the development time and the price of your solution thanks to our new generation specifications editor based on the WBS method",
-    "startYourCdc": "Start your CDC"
+    "createWebApp": "Create your web app"
   },
   "banner": {
     "lackOfResources": "A lack of resources to develop",

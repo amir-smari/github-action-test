@@ -4,7 +4,7 @@
       {{ $t("register.title") }}
     </p>
     <a href="#mindmap" class="outline__btn">
-      <span> {{ $t("register.goToEditor") }}</span>
+      <span>  {{ $t("mindMap.createWebApp") }}</span>
       <img src="@/assets/img/svg/arrow.svg" alt="arrow" />
     </a>
     <div
