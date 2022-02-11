@@ -1,11 +1,7 @@
 <template>
   <div class="home">
     <WelcomeSection />
-    <img
-      src="@/assets/img/png/problematic.png"
-      alt="problematic"
-      class="problematic-img"
-    />
+    <AnimationSection />
     <RegisterSection />
     <AboutSection />
     <!-- <img
@@ -35,6 +31,7 @@ import MindmapSection from "@/components/mainHome/MindmapSection.vue";
 import BannerSection from "@/components/mainHome/BannerSection.vue";
 import EditorImgSection from "@/components/mainHome/EditorImgSection.vue";
 import ContactSection from "@/components/mainHome/ContactSection.vue";
+import AnimationSection from "@/components/mainHome/AnimationSection.vue";
 
 export default {
   components: {
@@ -45,6 +42,7 @@ export default {
     AboutSection,
     BannerSection,
     EditorImgSection,
+    AnimationSection,
   },
   data() {
     return {
