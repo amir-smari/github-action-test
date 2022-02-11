@@ -11,7 +11,7 @@
       data-aos-duration="1000"
     />
     <button class="primary__btn" @click="openModal">
-      {{ $t("mindMap.startYourCdc") }}
+      {{ $t("mindMap.createWebApp") }}
     </button>
     <ModalComponent v-show="showModal" @close-modal="closeModal">
       <iframe :src="src" frameborder="0" width="100%" height="100%"></iframe>
