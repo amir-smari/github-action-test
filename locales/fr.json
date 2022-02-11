@@ -7,7 +7,6 @@
   },
   "register": {
     "title": "Estimez le temps de développement et le coût de votre projet",
-    "goToEditor": "Accédez à votre éditeur de CDC",
     "beFirst": "soyez les premiers",
     "disponible": "Version Saas disponible en",
     "April": "avril",
@@ -27,7 +26,7 @@
   },
   "mindMap": {
     "title": "Estimez le temps de développement et le prix de votre solution grâce à notre éditeur de cahier des charges nouvelle génération basée sur la méthode WBS",
-    "startYourCdc": "Démarrez votre CDC"
+    "createWebApp": "Créez votre application web"
   },
   "banner": {
     "lackOfResources": "Un manque de ressources pour développer",

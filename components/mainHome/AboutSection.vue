@@ -51,19 +51,66 @@
           vitae aenean nec. Nec fringilla egestas pellentesque pretium, ultrices
           viverra.
         </div>
-        <img
-          src="@/assets/img/png/overview.png"
-          alt="overview"
-          class="about__img"
-        />
+        <div class="viewer_wrapper">
+          <div v-viewer="options" class="images images_wrapper" ref="images">
+            <img
+              src="@/assets/img/png/tickets-kanban.png"
+              alt="overview"
+              class="about__img image"
+            />
+            <img
+              src="@/assets/img/png/tickets.png"
+              alt="overview"
+              class="about__img image"
+            />
+            <img
+              src="@/assets/img/png/tickets-tables.png"
+              alt="overview"
+              class="about__img image"
+            />
+          </div>
+          <img
+            src="@/assets/img/svg/view.svg"
+            alt="view image"
+            class="view-icon"
+            @click="show"
+          />
+        </div>
       </div>
 
       <div class="about__wrapper">
-        <img
+        <!-- <img
           src="@/assets/img/png/dashboard.png"
           alt="dashboard"
           class="about__img"
-        />
+        /> -->
+
+        <div class="viewer_wrapper">
+          <div v-viewer="options" class="images images_wrapper" ref="images">
+            <img
+              src="@/assets/img/png/tickets-kanban.png"
+              alt="overview"
+              class="about__img image"
+            />
+            <img
+              src="@/assets/img/png/tickets.png"
+              alt="overview"
+              class="about__img image"
+            />
+            <img
+              src="@/assets/img/png/tickets-tables.png"
+              alt="overview"
+              class="about__img image"
+            />
+          </div>
+          <img
+            src="@/assets/img/svg/view.svg"
+            alt="view image"
+            class="view-icon"
+            @click="show"
+          />
+        </div>
+
         <div class="about__content detail">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum rhoncus
           sed non libero convallis maecenas amet arcu, elit. Enim eget blandit
@@ -79,6 +126,14 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import ModalComponent from "@/components/shared/ModalComponent.vue";
+const images = ref<any>();
+const options = ref({
+  toolbar: true,
+  title: false,
+  movable: false,
+  rotatable: false,
+  scalable: false,
+});
 const showModal = ref(false);
 const src = ref("");
 const openModal = () => {
@@ -88,6 +143,10 @@ const openModal = () => {
 const closeModal = () => {
   showModal.value = false;
   src.value = "";
+};
+const show = () => {
+  const viewer = images.value.$viewer;
+  viewer.show();
 };
 </script>
 
@@ -101,6 +160,8 @@ const closeModal = () => {
     .about__wrapper {
       @include flex-around;
       position: relative;
+      margin-bottom: 5rem;
+
       .round-shape {
         position: absolute;
         left: 0;
@@ -166,6 +227,7 @@ const closeModal = () => {
         .about__content {
           width: 80%;
           text-align: center;
+          margin-top: 5rem;
           .primary__btn {
             margin: 1rem auto;
           }
@@ -198,6 +260,30 @@ const closeModal = () => {
         }
       }
     }
+  }
+}
+.image {
+  width: 300px;
+  cursor: pointer;
+  margin: 5px;
+  display: inline-block;
+}
+.images_wrapper {
+  position: relative;
+
+  img:nth-child(1) {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+  }
+}
+.viewer_wrapper {
+  position: relative;
+  .view-icon {
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    cursor: pointer;
   }
 }
 </style>
