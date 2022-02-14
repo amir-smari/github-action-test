@@ -22,7 +22,8 @@
     "engagezVosPartenaires": "engage your partners",
     "designYourPrototype": "Design your prototype faster, a key step for fundraising",
     "devFactoryIsWorkflow": "DevFactory is a workflow automation platform, based around an innovative programming methodology",
-    "learnMore": "Learn more"
+    "learnMore": "Learn more",
+    "appoloFeedback":"The initial specifications provided for the development of our web platform over 5 months. Thanks to DevFactory, we produced a solution that met our requirements in 3.5 months. Saving time and reducing costs essential for the development of our company."
   },
   "mindMap": {
     "title": "Estimate the development time and the price of your solution thanks to our new generation specifications editor based on the WBS method",
@@ -45,5 +46,6 @@
     "visitOurWebsite": "Visit our website",
     "follow": "FOLLOW US"
   },
-  "isRequired":"is required"
+  "isRequired":"is required",
+  "discoverThePlatform":"Discover the platform"
 }
