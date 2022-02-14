@@ -9,9 +9,20 @@
             {{ $t("about.developApplication") }}.
           </p>
           <p>
-            <strong> {{ $t("about.engagezVosPartenaires") }} : </strong>
+            <!-- <strong> {{ $t("about.engagezVosPartenaires") }} : </strong>
             {{ $t("about.designYourPrototype") }}
+          </p> -->
           </p>
+
+          <p class="about-feedback">
+            <q>{{ $t("about.appoloFeedback") }}</q>
+          </p>
+          <a
+            href="https://apollo-immo.fr"
+            class="btn-discover_appolo"
+            target="_blank"
+            >{{ $t("discoverThePlatform") }}</a
+          >
         </div>
         <img src="@/assets/img/png/award.png" alt="award" class="about__img" />
         <div class="round-shape">
@@ -165,6 +176,7 @@ const show = () => {
       .round-shape {
         position: absolute;
         left: 0;
+        z-index: 50;
       }
       .hexagone-shape {
         position: absolute;
@@ -178,6 +190,7 @@ const show = () => {
         line-height: 39px;
         letter-spacing: 0px;
         text-align: left;
+        z-index: 100;
         strong {
           font-weight: 700;
           font-size: 1.5rem;
@@ -284,6 +297,26 @@ const show = () => {
     top: 40%;
     left: 45%;
     cursor: pointer;
+  }
+}
+.about-feedback {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.8rem;
+  margin-bottom: 1rem;
+}
+.btn-discover_appolo {
+  background-color: #0b3d91;
+  border-radius: 6px;
+  color: white;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0px 3px 12px -1px rgb(24 28 50 / 40%),
+    0px 2px 4px -1px rgb(24 28 50 / 10%);
+  &:hover {
+    background-color: darken(#0b3d91, 10%);
   }
 }
 </style>
