@@ -8,14 +8,9 @@
             <strong>{{ $t("about.solution") }}</strong>
             {{ $t("about.developApplication") }}.
           </p>
-          <p>
-            <!-- <strong> {{ $t("about.engagezVosPartenaires") }} : </strong>
-            {{ $t("about.designYourPrototype") }}
-          </p> -->
-          </p>
-
           <p class="about-feedback">
             <q>{{ $t("about.appoloFeedback") }}</q>
+            <span>Arnaud Laudy - CEO Apollo-Immo</span>
           </p>
           <a
             href="https://apollo-immo.fr"
@@ -304,6 +299,13 @@ const show = () => {
   font-weight: 500;
   line-height: 1.8rem;
   margin-bottom: 1rem;
+  span {
+    display: block;
+    margin-left: auto;
+    width: fit-content;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
 }
 .btn-discover_appolo {
   background-color: #0b3d91;
