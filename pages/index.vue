@@ -4,14 +4,6 @@
     <AnimationSection />
     <RegisterSection />
     <AboutSection />
-    <!-- <img
-      src="@/assets/img/png/code-editor.png"
-      alt="problematic"
-      class="problematic-img"
-      data-aos="fade-down"
-      data-aos-easing="linear"
-      data-aos-duration="500"
-    /> -->
     <EditorImgSection />
     <MindmapSection />
     <BannerSection />
@@ -92,6 +84,9 @@ export default {
     &:hover {
       background: darken($primary, 10%);
     }
+  }
+  @media screen and (max-width: $lg) {
+    display: none;
   }
 }
 .problematic-img {
