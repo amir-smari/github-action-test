@@ -65,13 +65,13 @@
     width: 6rem;
   }
   .welcome-section__header {
-    padding-bottom: 0;
     .title {
       font-size: 1.5rem;
       font-weight: 600;
       margin-top: 1rem;
     }
     padding: 30px;
+    padding-bottom: 0;
     @include flex-center;
     flex-direction: column;
     font-size: 1.5rem;
@@ -88,12 +88,15 @@
     align-items: center;
     flex-direction: column;
     height: 100%;
-    gap: 3rem;
+    gap: 1rem;
+
     .welcome-section__desc {
       text-align: center;
       h1 {
-        margin-bottom: 1rem;
+        margin-bottom: 1.25rem;
         font-weight: 500;
+        font-size: 1.5rem;
+        margin-top: 1rem;
       }
       p {
         font-weight: 600;
@@ -102,6 +105,15 @@
         color: $grey3;
         text-align: center;
       }
+    }
+  }
+  @media screen and (min-width: $lg) {
+    h1 {
+      font-size: 2rem !important;
+    }
+    .welcome-section__content {
+      gap: 3rem;
+      padding-top: 1rem;
     }
   }
 }
@@ -141,6 +153,9 @@
         @include x-small-text;
       }
     }
+  }
+  .welcome-section_illustrator {
+    transform: scale(0.5);
   }
 }
 </style>
