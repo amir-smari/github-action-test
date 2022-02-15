@@ -12,9 +12,9 @@
               :placeholder="$t('contact.name')"
               v-model="formValue.name"
             />
-            <span class="required-input" v-show="checkInput.isNameValid"
-              >{{$t('contact.name') + ' ' + $t('isRequired')}}</span
-            >
+            <span class="required-input" v-show="checkInput.isNameValid">{{
+              $t("contact.name") + " " + $t("isRequired")
+            }}</span>
           </div>
           <div>
             <input
@@ -22,9 +22,9 @@
               :placeholder="$t('contact.email')"
               v-model="formValue.email"
             />
-            <span class="required-input" v-show="checkInput.isEmailValid"
-              >{{$t('contact.email') + ' ' + $t('isRequired')}}</span
-            >
+            <span class="required-input" v-show="checkInput.isEmailValid">{{
+              $t("contact.email") + " " + $t("isRequired")
+            }}</span>
           </div>
 
           <div class="subject">
@@ -34,9 +34,9 @@
               class="form__control"
               v-model="formValue.subject"
             />
-            <span class="required-input" v-show="checkInput.isSubjectValid"
-              >{{$t('contact.subject') + ' ' + $t('isRequired')}}</span
-            >
+            <span class="required-input" v-show="checkInput.isSubjectValid">{{
+              $t("contact.subject") + " " + $t("isRequired")
+            }}</span>
           </div>
           <div class="message">
             <textarea
@@ -46,7 +46,7 @@
               v-model="formValue.message"
             ></textarea>
             <span class="required-input" v-show="checkInput.isMessageValid"
-              >Message {{$t('isRequired')}}</span
+              >Message {{ $t("isRequired") }}</span
             >
           </div>
 
@@ -139,7 +139,7 @@ const submitForm = (event) => {
     !checkInput.value.isMessageValid
   ) {
     console.log("submited");
-    handleSubmit()
+    handleSubmit();
     formContact.value.reset();
     formValue.value.name = "";
     formValue.value.email = "";
@@ -152,7 +152,7 @@ const submitForm = (event) => {
 <style lang="scss" scoped>
 .contact-section {
   @include flex-center;
-  margin: 4rem;
+  margin: 3rem 2rem;
   position: relative;
   .dot {
     height: 107px;
@@ -224,9 +224,12 @@ const submitForm = (event) => {
       flex-direction: column;
       justify-content: center;
       padding: 2rem 3rem;
-      gap: 2rem;
+      gap: 1rem;
       border-radius: 0px 6px 6px 0px;
       .info__property {
+        a {
+          text-decoration: none;
+        }
         flex-direction: column;
         @include flex-start;
         align-items: flex-start;

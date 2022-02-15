@@ -27,7 +27,7 @@
   width: 80%;
   margin: auto;
   height: 95%;
-
+  border-radius: 6px;
   z-index: 3;
 }
 </style>

@@ -7,7 +7,7 @@
         class="footer__logo"
       />
     </div>
-    <span>© 2022 DevFactory. Powered by Sastec.</span>
+    <span class="desc">© 2022 DevFactory. Powered by Sastec.</span>
     <div class="contact">
       <a href="mailto:Contact@devfactory.ai">
         <img src="@/assets/img/svg/email.svg" alt="email" class="media" />
@@ -38,13 +38,18 @@ footer {
     cursor: pointer;
   }
   .contact {
+    margin-top: 1rem;
     img:first-child {
       margin-right: 10px;
-      width: 30px;
+      width: 25px;
+      height: 25px;
     }
     .media {
       cursor: pointer;
     }
+  }
+  .desc {
+    margin-top: 0.5rem;
   }
 }
 

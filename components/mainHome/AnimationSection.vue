@@ -1,7 +1,8 @@
 <template>
   <div class="animation_wrapper">
     <Vue3Lottie
-      :animationData="animation"
+      @onComplete="onComplete"
+      :animationData="currentAnimation"
       :loop="false"
       ref="customControl"
       v-if="windowTop > 200"
@@ -11,8 +12,10 @@
 
 <script>
 import Vue3Lottie from "vue3-lottie";
-import animation from "@/assets/animation/data.json";
-
+import animationMobileEn from "@/assets/animation/mobile/animationMobileEn.json";
+import animationMobileFr from "@/assets/animation/mobile/animationMobileFr.json";
+import animationEn from "@/assets/animation/desktop/animationEn.json";
+import animationFr from "@/assets/animation/desktop/animationFr.json";
 export default {
   components: {
     Vue3Lottie,
@@ -20,13 +23,36 @@ export default {
   data() {
     return {
       playState: false,
-      animation,
+      animationMobileEn,
+      animationMobileFr,
+      animationEn,
+      animationFr,
       windowTop: 0,
     };
+  },
+  computed: {
+    currentAnimation() {
+      let anim;
+      if (screen.width > 992 && this.$i18n.locale == "en") {
+        return (anim = animationEn);
+      }
+      if (screen.width > 992 && this.$i18n.locale == "fr") {
+        return (anim = animationFr);
+      }
+      if (screen.width < 992 && this.$i18n.locale == "en") {
+        return (anim = animationMobileEn);
+      }
+      if (screen.width < 992 && this.$i18n.locale == "fr") {
+        return (anim = animationMobileFr);
+      } else return anim;
+    },
   },
   methods: {
     onScroll(e) {
       this.windowTop = window.scrollY;
+    },
+    onComplete() {
+      this.$refs["customControl"]?.playSegments([[210, 250]], true);
     },
   },
   mounted() {
@@ -38,6 +64,9 @@ export default {
 <style lang="scss" scoped>
 .animation_wrapper {
   width: 100%;
-  height: 600px;
+  height: 350px;
+  @media screen and (min-width: 992px) {
+    height: 600px;
+  }
 }
 </style>

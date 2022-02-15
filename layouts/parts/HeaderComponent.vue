@@ -31,7 +31,12 @@ header {
     align-items: center;
     padding: 0.75rem 1rem;
     .wrapper-announcement {
+      font-size: 0.75rem;
+
       flex-grow: 1;
+      @media screen and (min-width: $lg) {
+        padding-left: 4rem;
+      }
     }
   }
 }

@@ -3,7 +3,7 @@
     <div class="about">
       <div class="about__wrapper">
         <div class="about__content">
-          <p>
+          <p class="desc">
             {{ $t("about.WhetherYouAre") }}, {{ $t("about.weHave") }}
             <strong>{{ $t("about.solution") }}</strong>
             {{ $t("about.developApplication") }}.
@@ -85,12 +85,6 @@
       </div>
 
       <div class="about__wrapper">
-        <!-- <img
-          src="@/assets/img/png/dashboard.png"
-          alt="dashboard"
-          class="about__img"
-        /> -->
-
         <div class="viewer_wrapper">
           <div v-viewer="options" class="images images_wrapper" ref="images">
             <img
@@ -158,41 +152,42 @@ const show = () => {
 
 <style lang="scss" scoped>
 .about-section {
-  .about:nth-child(1) {
-    margin-top: 14%;
-  }
   .about {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
     .about__wrapper {
       @include flex-around;
       position: relative;
-      margin-bottom: 5rem;
+      margin-bottom: 2rem;
 
       .round-shape {
         position: absolute;
         left: 0;
-        z-index: 50;
+        z-index: -1;
       }
       .hexagone-shape {
         position: absolute;
         right: 0;
       }
       .about__content {
-        width: 33%;
+        width: 50%;
         color: $grey1;
         font-size: 1.3rem;
         font-weight: 600;
-        line-height: 39px;
+        line-height: 1.5rem;
         letter-spacing: 0px;
         text-align: left;
-        z-index: 100;
+
+        .desc {
+          text-align: justify;
+        }
         strong {
           font-weight: 700;
-          font-size: 1.5rem;
+          font-size: 1.25rem;
         }
 
         .primary__btn {
           @include btn;
+          @include btn-font;
           background: $primary;
           color: $light;
           margin-top: 15px;
@@ -217,11 +212,13 @@ const show = () => {
         @include small-text;
         text-align: justify;
         font-weight: 400;
+        padding-left: 1rem;
+        padding-right: 1rem;
       }
     }
   }
 }
-@media screen and (max-width: $lg) {
+@media screen and (max-width: 1200px) {
   .about-section {
     .about {
       .about__wrapper:first-child {
@@ -235,9 +232,9 @@ const show = () => {
         .about__content {
           width: 80%;
           text-align: center;
-          margin-top: 5rem;
+          margin-top: 1rem;
           .primary__btn {
-            margin: 1rem auto;
+            margin: 1.75rem auto;
           }
         }
       }
@@ -246,10 +243,9 @@ const show = () => {
 }
 @media screen and (max-width: $sm) {
   .about-section {
-    margin-top: 5rem;
+    margin-top: 11rem;
     .about {
       .about__wrapper {
-        margin: 60px auto;
         .about__img {
           width: 70%;
           max-width: 250px;
@@ -258,8 +254,7 @@ const show = () => {
           @include small-text;
           text-align: center;
           .primary__btn {
-            margin-top: 15px;
-            padding: 8px;
+            margin-top: 1.75rem;
           }
         }
         .detail {
@@ -270,6 +265,18 @@ const show = () => {
     }
   }
 }
+@media screen and(min-width:$sm) {
+  .about-section {
+    margin-top: 13rem;
+  }
+}
+@media screen and(min-width:$lg) {
+  .about-section {
+    margin-top: 21rem;
+    margin-bottom: 6rem;
+  }
+}
+
 .image {
   width: 300px;
   cursor: pointer;
@@ -298,7 +305,9 @@ const show = () => {
   font-size: 1rem;
   font-weight: 500;
   line-height: 1.8rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  text-align: justify;
+  margin-top: 1rem;
   span {
     display: block;
     margin-left: auto;
@@ -306,19 +315,28 @@ const show = () => {
     font-size: 0.75rem;
     font-weight: 600;
   }
+  @media screen and (min-width: $lg) {
+    margin-bottom: 1rem;
+  }
 }
 .btn-discover_appolo {
-  background-color: #0b3d91;
+  @include btn-font;
+  background-color: $primary;
   border-radius: 6px;
   color: white;
-  font-size: 1rem;
   padding: 0.75rem 1rem;
   cursor: pointer;
   text-decoration: none;
   box-shadow: 0px 3px 12px -1px rgb(24 28 50 / 40%),
     0px 2px 4px -1px rgb(24 28 50 / 10%);
   &:hover {
-    background-color: darken(#0b3d91, 10%);
+    background-color: darken($primary, 10%);
+  }
+}
+@media screen and (min-width: 520px) {
+  .detail {
+    margin-top: 4rem !important;
   }
 }
 </style>
+

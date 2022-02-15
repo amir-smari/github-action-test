@@ -1,7 +1,7 @@
 <template>
   <div id="mindmap" class="mindmap-section">
     <div class="mindmap__content">
-      {{ $t("mindMap.title") }}
+      <h3>{{ $t("mindMap.title") }}</h3>
     </div>
     <img
       src="@/assets/img/png/mindmap.png"
@@ -25,8 +25,12 @@ import ModalComponent from "@/components/shared/ModalComponent.vue";
 const showModal = ref(false);
 const src = ref("");
 const openModal = () => {
-  showModal.value = true;
-  src.value = "https://admin.devfactory.ai/#/mindmap-demo";
+  if (screen.width < 992) {
+    return alert("this option is not available in the phone");
+  } else {
+    showModal.value = true;
+    src.value = "https://admin.devfactory.ai/#/mindmap-demo";
+  }
 };
 const closeModal = () => {
   showModal.value = false;
@@ -38,38 +42,53 @@ const closeModal = () => {
   background-image: url("@/assets/img/png/icon-bg.png");
   text-align: center;
   @include meduim-text;
+  @media screen and (min-width: $md) {
+    margin-bottom: 3rem;
+  }
 }
 .mindmap__content {
-  width: 70%;
+  width: 80%;
   margin: auto;
-  text-align: center;
-  margin-bottom: 2%;
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 2.55rem;
-  letter-spacing: 0px;
-  text-align: center;
-  color: $grey1;
+  margin-bottom: 2rem;
+  h3 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    @media screen and (min-width: $md) {
+      font-size: 1.25rem;
+    }
+    @media screen and (min-width: $lg) {
+      font-size: 1.5rem;
+      margin-bottom: 5rem;
+    }
+  }
 }
 .primary__btn {
   padding: 10px;
   @include btn;
+  @include btn-font;
   background: $primary;
   color: $light;
   margin: auto;
-  margin-bottom: 10%;
-  padding: 1rem 2rem;
-  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+
   &:hover {
     background: darken($primary, 10%);
+  }
+  @media screen and (min-width: $lg) {
+    padding: 1rem 1.5rem;
   }
 }
 img {
   max-width: 90%;
 }
-@media screen and (max-width: $sm) {
-  .primary__btn {
-    padding: 8px;
+iframe {
+  border-radius: 6px;
+}
+@media screen and(min-width:$lg) {
+  .mindmap-section {
+    margin-top: 7rem;
   }
 }
 </style>
