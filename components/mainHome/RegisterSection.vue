@@ -69,7 +69,7 @@ const handelRegisterBtn = (event) => {
   color: $light;
   position: relative;
   margin: 30px auto;
-  height: 400px;
+  height: 300px;
   padding: 4% 0.5rem 0 0.5rem;
   a {
     text-decoration: none;
@@ -86,8 +86,8 @@ const handelRegisterBtn = (event) => {
     color: $primary;
     background: $light;
     @include btn;
+    @include btn-font;
     margin: 26px auto;
-    font-weight: 500;
     gap: 0.5rem;
     box-shadow: 0px 3.85714px 15.4286px -1.28571px rgba(24, 28, 50, 0.4),
       0px 2.57143px 5.14286px -1.28571px rgba(24, 28, 50, 0.1);
@@ -126,10 +126,11 @@ const handelRegisterBtn = (event) => {
       letter-spacing: 0px;
       text-align: center;
       color: $grey3;
+      margin-top: 0.5rem;
     }
     .form__wrapper {
       display: flex;
-      gap: 1rem;
+      gap: 0.5rem;
       align-items: baseline;
       margin-top: 30px;
       margin-bottom: 0.5rem;
@@ -169,7 +170,6 @@ const handelRegisterBtn = (event) => {
     }
     .outline__btn {
       padding: 9px;
-      @include x-small-text;
     }
     .register-section__form {
       .form-title {
@@ -183,8 +183,8 @@ const handelRegisterBtn = (event) => {
       .form__wrapper {
         flex-direction: column;
         .primary__btn {
-          width: 290px;
-          margin-top: 15px;
+          width: 100%;
+          margin-top: 0.25rem;
         }
       }
     }
@@ -203,6 +203,11 @@ const handelRegisterBtn = (event) => {
         line-height: 1.5rem !important;
       }
     }
+  }
+}
+@media screen and (min-width: $lg) {
+  .register-input > input {
+    width: 20rem !important;
   }
 }
 </style>
