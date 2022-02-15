@@ -1,34 +1,58 @@
 <template>
   <div class="code-editor">
-    <img
-      src="@/assets/img/png/code-editor-fr.png"
-      alt="problematic"
-      class="problematic-img"
-      data-aos="fade-down"
-      data-aos-easing="linear"
-      data-aos-duration="500"
-      v-if="$i18n.locale === 'fr'"
-    />
-    <img
-      src="@/assets/img/png/code-editor-en.png"
-      alt="problematic"
-      class="problematic-img"
-      data-aos="fade-down"
-      data-aos-easing="linear"
-      data-aos-duration="500"
-      v-if="$i18n.locale === 'en'"
-    />
+    <div class="desktop-img">
+      <img
+        src="assets/images/code-editor-en.png"
+        alt="problematic"
+        class="problematic-img"
+        v-if="$i18n.locale == 'en'"
+      />
+      <img
+        src="assets/images/code-editor-fr.png"
+        alt="problematic"
+        class="problematic-img"
+        v-if="$i18n.locale == 'fr'"
+      />
+    </div>
+    <div class="mobile-img">
+      <img
+        src="assets/images/code-editor-mobile-en.png"
+        alt="problematic"
+        class="problematic-img"
+        v-if="$i18n.locale == 'en'"
+      />
+      <img
+        src="assets/images/code-editor-mobile-fr.png"
+        alt="problematic"
+        class="problematic-img"
+        v-if="$i18n.locale == 'fr'"
+      />
+    </div>
   </div>
 </template>
 
-<script lang="ts" setup></script>
-
 <style lang="scss" scoped>
 .code-editor {
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
   img {
     width: 100%;
     object-fit: contain;
+  }
+}
+.desktop-img {
+  display: none;
+}
+@media screen and (min-width: $md) {
+  .code-editor {
+    margin-bottom: 4rem;
+    margin-top: 3rem;
+  }
+  .desktop-img {
+    display: block;
+  }
+  .mobile-img {
+    display: none;
   }
 }
 </style>
