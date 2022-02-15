@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="btn-wrapper">
     <div
       class="button"
       v-for="(lang, index) in $i18n.availableLocales"
@@ -20,11 +20,15 @@
 .button {
   float: left;
   position: relative;
+  margin-right: 0.25rem;
+  input {
+    position: absolute;
+  }
 }
 
 .button label,
 .button input {
-  padding: 0.5rem 1rem;
+  padding: 0.25rem 0.5rem;
   text-transform: capitalize;
 }
 
@@ -41,6 +45,11 @@
 .button label {
   cursor: pointer;
   z-index: 90;
-  font-weight: 600;
+  font-weight: 500;
+}
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
