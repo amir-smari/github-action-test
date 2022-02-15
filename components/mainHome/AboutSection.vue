@@ -162,7 +162,7 @@ const show = () => {
       .round-shape {
         position: absolute;
         left: 0;
-        z-index: 50;
+        z-index: -1;
       }
       .hexagone-shape {
         position: absolute;
@@ -176,7 +176,7 @@ const show = () => {
         line-height: 1.5rem;
         letter-spacing: 0px;
         text-align: left;
-        z-index: 100;
+
         .desc {
           text-align: justify;
         }
