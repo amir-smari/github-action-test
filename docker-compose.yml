@@ -16,7 +16,7 @@ services:
     build:
       context: .
       dockerfile: docker/Dockerfile.dev
-    command: yarn serve
+    command: yarn dev
     volumes:
       - ./:/app:cached
       - /app/node_modules
