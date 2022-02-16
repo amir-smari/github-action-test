@@ -60,17 +60,17 @@
         <div class="viewer_wrapper">
           <div v-viewer="options" class="images images_wrapper" ref="images">
             <img
-              src="@/assets/img/png/tickets-kanban.png"
+              src="@/assets/img/png/tickets/tickets-kanban.png"
               alt="overview"
               class="about__img image"
             />
             <img
-              src="@/assets/img/png/tickets.png"
+              src="@/assets/img/png/tickets/tickets.png"
               alt="overview"
               class="about__img image"
             />
             <img
-              src="@/assets/img/png/tickets-tables.png"
+              src="@/assets/img/png/tickets/tickets-tables.png"
               alt="overview"
               class="about__img image"
             />
@@ -88,17 +88,17 @@
         <div class="viewer_wrapper">
           <div v-viewer="options" class="images images_wrapper" ref="images">
             <img
-              src="@/assets/img/png/tickets-kanban.png"
+              src="@/assets/img/png/platform/platform-dashbord.png"
               alt="overview"
               class="about__img image"
             />
             <img
-              src="@/assets/img/png/tickets.png"
+              src="@/assets/img/png/platform/platform-list.png"
               alt="overview"
               class="about__img image"
             />
             <img
-              src="@/assets/img/png/tickets-tables.png"
+              src="@/assets/img/png/platform/platform-overview.png"
               alt="overview"
               class="about__img image"
             />
@@ -290,6 +290,9 @@ const show = () => {
     position: absolute;
     top: 25%;
     left: 25%;
+  }
+  img {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   }
 }
 .viewer_wrapper {
