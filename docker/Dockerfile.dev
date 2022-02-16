@@ -1,9 +1,7 @@
-FROM node:17-alpine3.14
+FROM node:14.17.3-alpine3.14
 
 # create destination directory
-RUN mkdir -p /dev-factory-website
-WORKDIR /dev-factory-website
-
+WORKDIR /app
 # update and install dependency
 RUN apk update && apk upgrade
 RUN apk add git
@@ -11,7 +9,7 @@ RUN apk add git
 # copy the package.json, yarn.lock
 COPY package.json yarn.lock ./
 # copy the app, note .dockerignore
-COPY . /dev-factory-website/
+COPY . /app/
 RUN yarn install
 
 # expose 5000 on container
