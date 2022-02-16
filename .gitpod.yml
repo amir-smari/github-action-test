@@ -10,7 +10,7 @@ vscode:
     - "octref.vetur"
 tasks:
   - init: docker-compose --profile=dev build
-    command: docker-compose --profile=dev ps
+    command: docker-compose --profile=dev up -d 
 ports:
   - port: 3000
     visibility: public
