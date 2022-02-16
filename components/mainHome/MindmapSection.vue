@@ -10,11 +10,9 @@
       data-aos-easing="linear"
       data-aos-duration="1000"
     />
-    <button class="primary__btn" @click="openModal">
-      {{ $t("mindMap.createWebApp") }}
-    </button>
+    <button class="primary__btn" @click="openMindmapInNewTab">{{ $t("mindMap.createWebApp") }}</button>
     <ModalComponent v-show="showModal" @close-modal="closeModal">
-      <iframe :src="src" frameborder="0" width="100%" height="100%"></iframe>
+      <iframe allowfullscreen :src="src" frameborder="0" width="100%" height="100%"></iframe>
     </ModalComponent>
   </div>
 </template>
@@ -29,13 +27,16 @@ const openModal = () => {
     return alert("this option is not available in the phone");
   } else {
     showModal.value = true;
-    src.value = "https://admin.devfactory.ai/#/mindmap-demo";
+    src.value = "";
   }
 };
 const closeModal = () => {
   showModal.value = false;
   src.value = "";
 };
+const openMindmapInNewTab = () => {
+ window.open('https://admin.devfactory.ai/#/mindmap-demo') 
+}
 </script>
 <style lang="scss" scoped>
 .mindmap-section {
@@ -82,9 +83,6 @@ const closeModal = () => {
 }
 img {
   max-width: 90%;
-}
-iframe {
-  border-radius: 6px;
 }
 @media screen and(min-width:$lg) {
   .mindmap-section {
