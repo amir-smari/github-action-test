@@ -2,13 +2,13 @@
   <div class="code-editor">
     <div class="desktop-img">
       <img
-        src="assets/images/code-editor-en.png"
+        src="/assets/images/code-editor-en.png"
         alt="problematic"
         class="problematic-img"
         v-if="$i18n.locale == 'en'"
       />
       <img
-        src="assets/images/code-editor-fr.png"
+        src="/assets/images/code-editor-fr.png"
         alt="problematic"
         class="problematic-img"
         v-if="$i18n.locale == 'fr'"
@@ -16,13 +16,13 @@
     </div>
     <div class="mobile-img">
       <img
-        src="assets/images/code-editor-mobile-en.png"
+        src="/assets/images/code-editor-mobile-en.png"
         alt="problematic"
         class="problematic-img"
         v-if="$i18n.locale == 'en'"
       />
       <img
-        src="assets/images/code-editor-mobile-fr.png"
+        src="/assets/images/code-editor-mobile-fr.png"
         alt="problematic"
         class="problematic-img"
         v-if="$i18n.locale == 'fr'"
