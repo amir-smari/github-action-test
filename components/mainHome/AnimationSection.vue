@@ -6,7 +6,13 @@
       :loop="false"
       ref="customControl"
       v-if="windowTop > 200"
+      @click="showModal = true"
     />
+    <ModalComponent v-show="showModal" @close-modal="closeModal" :fit="true">
+      <video controls height="400px" autoplay muted>
+        <source src="assets/videos/demo.mp4" type="video/mp4" />
+      </video>
+    </ModalComponent>
   </div>
 </template>
 
@@ -16,9 +22,12 @@ import animationMobileEn from "@/assets/animation/mobile/animationMobileEn.json"
 import animationMobileFr from "@/assets/animation/mobile/animationMobileFr.json";
 import animationEn from "@/assets/animation/desktop/animationEn.json";
 import animationFr from "@/assets/animation/desktop/animationFr.json";
+import ModalComponent from "../shared/ModalComponent.vue";
+
 export default {
   components: {
     Vue3Lottie,
+    ModalComponent,
   },
   data() {
     return {
@@ -28,6 +37,7 @@ export default {
       animationEn,
       animationFr,
       windowTop: 0,
+      showModal: false,
     };
   },
   computed: {
@@ -54,6 +64,9 @@ export default {
     onComplete() {
       this.$refs["customControl"]?.playSegments([[210, 250]], true);
     },
+    closeModal() {
+      this.showModal = false;
+    },
   },
   mounted() {
     this.windowTop = window.scrollY;
@@ -65,6 +78,7 @@ export default {
 .animation_wrapper {
   width: 100%;
   height: 350px;
+  cursor: pointer;
   @media screen and (min-width: 992px) {
     height: 600px;
   }
