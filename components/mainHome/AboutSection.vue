@@ -51,26 +51,22 @@
     <div class="about">
       <div class="about__wrapper">
         <div class="about__content detail">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum rhoncus
-          sed non libero convallis maecenas amet arcu, elit. Enim eget blandit
-          elit commodo. Vehicula id ipsum, ligula arcu neque eu. Leo sit turpis
-          vitae aenean nec. Nec fringilla egestas pellentesque pretium, ultrices
-          viverra.
+          {{ $t("about.generatorApi") }}
         </div>
         <div class="viewer_wrapper">
           <div v-viewer="options" class="images images_wrapper" ref="images">
             <img
-              src="@/assets/img/png/tickets/tickets-kanban.png"
+              src="@/assets/img/png/figma/generateur.png"
               alt="overview"
               class="about__img image"
             />
             <img
-              src="@/assets/img/png/tickets/tickets.png"
+              src="@/assets/img/png/figma/figma-1.png"
               alt="overview"
               class="about__img image"
             />
             <img
-              src="@/assets/img/png/tickets/tickets-tables.png"
+              src="@/assets/img/png/figma/figma-2.png"
               alt="overview"
               class="about__img image"
             />
@@ -88,17 +84,17 @@
         <div class="viewer_wrapper">
           <div v-viewer="options" class="images images_wrapper" ref="images">
             <img
-              src="@/assets/img/png/platform/platform-dashbord.png"
+              src="@/assets/img/png/mindmap/ide-cloud.png"
               alt="overview"
               class="about__img image"
             />
             <img
-              src="@/assets/img/png/platform/platform-list.png"
+              src="@/assets/img/png/mindmap/mindmap.png"
               alt="overview"
               class="about__img image"
             />
             <img
-              src="@/assets/img/png/platform/platform-overview.png"
+              src="@/assets/img/png/mindmap/simulateur-estimatif.png"
               alt="overview"
               class="about__img image"
             />
@@ -112,11 +108,7 @@
         </div>
 
         <div class="about__content detail">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum rhoncus
-          sed non libero convallis maecenas amet arcu, elit. Enim eget blandit
-          elit commodo. Vehicula id ipsum, ligula arcu neque eu. Leo sit turpis
-          vitae aenean nec. Nec fringilla egestas pellentesque pretium, ultrices
-          viverra.
+          {{ $t("about.simulator") }}
         </div>
       </div>
     </div>
