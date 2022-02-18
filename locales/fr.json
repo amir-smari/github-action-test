@@ -1,5 +1,5 @@
 {
-  "headerAnnouncement": "Version Saas disponible en avril 2022, soyez les premiers",
+  "headerAnnouncement": "Version Saas disponible en juin 2022, soyez les premiers",
   "welcome": {
     "workflowsAutomationPlatform": "Plateforme d'automatisation des workflows",
     "title": "Programmez autrement, développez plus rapidement",
@@ -9,7 +9,7 @@
     "title": "Estimez le temps de développement et le coût de votre projet",
     "beFirst": "soyez les premiers",
     "disponible": "Version Saas disponible en",
-    "April": "avril",
+    "june": "juin",
     "formTitle": "Inscrivez-vous sur la liste d'attente pour une démo",
     "placeholderEmail": "Entrez votre email",
     "notifyMe": "Notifiez-moi"
@@ -23,7 +23,9 @@
     "designYourPrototype": "Concevez plus rapidement votre prototype, étape clé pour une levée de fonds",
     "devFactoryIsWorkflow": "DevFactory est une plateforme d’automatisation des workflows, axée autour d’une méthodologie innovante de programmation",
     "learnMore": "En savoir plus",
-    "appoloFeedback":"Le cahier des charges initial prévoyait un développement de notre plateforme web sur 5 mois. Grâce à DevFactory, nous avons produit en 3 mois et demi une solution conforme à nos exigences. Un gain de temps et une réduction des coûts essentiels pour le développement de notre société."
+    "appoloFeedback": "Le cahier des charges initial prévoyait un développement de notre plateforme web sur 5 mois. Grâce à DevFactory, nous avons produit en 3 mois et demi une solution conforme à nos exigences. Un gain de temps et une réduction des coûts essentiels pour le développement de notre société.",
+    "generatorApi": "Le générateur de Front permet de créer des pages Figma automatiquement et de convertir le design en code. Le Générateur API quant à lui permet, à partir des modèles de bases de données, de générer automatiquement des codes. ",
+    "simulator": "Le simulateur permet de structurer votre projet et de visualiser les livrables pour calculer un temps approximatif de développement et obtenir un cout estimatif. L’IDE Cloud quant à lui permet, de créer un environnement de développement automatisé et d’en faciliter l’exécution."
   },
   "mindMap": {
     "title": "Sur la base de votre cahier des charges, calculez le temps de développement et le prix de votre application web",
@@ -46,6 +48,6 @@
     "visitOurWebsite": "Visitez notre site internet",
     "follow": "SUIVEZ-NOUS"
   },
-  "isRequired":"est requis",
-  "discoverThePlatform":"Découvrir la plateforme"
+  "isRequired": "est requis",
+  "discoverThePlatform": "Découvrir la plateforme"
 }

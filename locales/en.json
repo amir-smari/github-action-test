@@ -1,5 +1,5 @@
 {
-  "headerAnnouncement": "Saas version available in April 2022, be the first",
+  "headerAnnouncement": "Saas version available in June 2022, be the first",
   "welcome": {
     "workflowsAutomationPlatform": "Workflows Automation Platform",
     "title": "Program differently, develop faster",
@@ -9,7 +9,7 @@
     "title": "Estimate the development time and cost of your project",
     "beFirst": "be the first",
     "disponible": "Saas version available in",
-    "April": "April",
+    "june": "June",
     "formTitle": "Join the waiting list for a demo",
     "placeholderEmail": "Enter your e-mail",
     "notifyMe": "Notify me"
@@ -23,7 +23,9 @@
     "designYourPrototype": "Design your prototype faster, a key step for fundraising",
     "devFactoryIsWorkflow": "DevFactory is a workflow automation platform, based around an innovative programming methodology",
     "learnMore": "Learn more",
-    "appoloFeedback":"The initial specifications provided for the development of our web platform over 5 months. Thanks to DevFactory, we produced a solution that met our requirements in 3.5 months. Saving time and reducing costs essential for the development of our company."
+    "appoloFeedback": "The initial specifications provided for the development of our web platform over 5 months. Thanks to DevFactory, we produced a solution that met our requirements in 3.5 months. Saving time and reducing costs essential for the development of our company.",
+    "generatorApi": "Front's builder helps to create Figma pages automatically and convert the design to code. The API Generator, on the other hand, allows codes to be automatically generated from database models.",
+    "simulator": "The simulator allows you to structure your project and visualize the available to calculate an approximate development time and get an estimated cost. The Cloud IDE allows you to create a automated development environment and to facilitate execution."
   },
   "mindMap": {
     "title": "Based on your specifications, calculate the development time and price of your web application",
@@ -46,6 +48,6 @@
     "visitOurWebsite": "Visit our website",
     "follow": "FOLLOW US"
   },
-  "isRequired":"is required",
-  "discoverThePlatform":"Discover the platform"
+  "isRequired": "is required",
+  "discoverThePlatform": "Discover the platform"
 }
