@@ -19,6 +19,11 @@ export default defineNuxtConfig({
       },
     },
   },
+  intlify: {
+    vueI18n: {
+      locale: "fr",
+    },
+  },
 });
 
 declare module "@nuxt/schema" {
