@@ -14,7 +14,7 @@
     >
       <span class="form-title"
         >{{ $t("register.disponible") }}
-        <span>{{ $t("register.April") }} 2022</span>,
+        <span>{{ $t("register.june") }} 2022</span>,
         {{ $t("register.beFirst") }}
         !
       </span>
