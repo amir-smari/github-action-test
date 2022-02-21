@@ -4,18 +4,20 @@ import { createTransport, SendMailOptions } from "nodemailer";
 
 export default async (req: IncomingMessage, res: ServerResponse) => {
   const { form } = await useBody(req);
+  console.log("EMAIL_HOST: ",process.env.EMAIL_HOST);
+  
   console.log(form);
   if (form.email && form.name && form.message && form.subject) {
     const transporter = createTransport({
-      service: "gmail",
-      port: 465,
+      host: process.env.SMTP_HOST,
+      port: process.env.SMTP_PORT,
       secure: true, // true for 465, false for other ports
-      logger: true,
-      debug: true,
+      logger: false,
+      debug: false,
       secureConnection: false,
       auth: {
-        user: "",
-        pass: "",
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
       },
       tls: {
         rejectUnAuthorized: true,
@@ -24,10 +26,12 @@ export default async (req: IncomingMessage, res: ServerResponse) => {
     //TODO set envirenment variable for smtp config
     // TODO set content of the email
     const mailOptions: SendMailOptions = {
-      from: "",
-      to: form.email,
-      subject: "test",
-      html: `<h1>test email</h1><p>ete</p><br></br>`,
+      from: process.env.SMTP_ADMIN_EMAIL,
+      to: process.env.CONTACT_FORM_SEND_TO,
+      subject: "Dev Factory Landing page contact Form",
+      html: `<p>${Object.keys(form).map(key => `
+        ${key} : ${form[key]} <br>
+      `)}</p>`,
     };
     transporter.sendMail(mailOptions, (err: any, data: any) => {
       if (err) {
@@ -35,14 +39,8 @@ export default async (req: IncomingMessage, res: ServerResponse) => {
       }
       return console.log("Email sent!!!");
     });
-    // try {
-    //   const info = await transporter.sendMail(mailOptions);
-    //   console.log(info);
-    // } catch (error) {
-    //   console.log(error);
-    // }
   } else {
-    res.statusCode = 404;
+    res.statusCode = 400;
     return "error";
   }
 };
