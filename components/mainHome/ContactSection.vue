@@ -128,7 +128,7 @@ const submitForm = (event) => {
   } else checkInput.value.isSubjectValid = false;
 
   //message Validation
-  if (formValue.value.message.length < 10) {
+  if (formValue.value.message.length < 2) {
     checkInput.value.isMessageValid = true;
   } else checkInput.value.isMessageValid = false;
 
