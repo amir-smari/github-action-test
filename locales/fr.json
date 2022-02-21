@@ -2,7 +2,8 @@
   "headerAnnouncement": "Version Saas disponible en juin 2022, soyez les premiers",
   "welcome": {
     "workflowsAutomationPlatform": "Plateforme d'automatisation des workflows",
-    "title": "Programmez autrement, développez plus rapidement",
+    "title": "Programmez autrement",
+    "subTitle":"Développez plus rapidement",
     "description": "500 fonctionnalités font aujourd’hui 80% de tous les développements informatiques. Il est donc possible de proposer des solutions d’automatisation qui feront gagner un temps considérable aux développeurs"
   },
   "register": {

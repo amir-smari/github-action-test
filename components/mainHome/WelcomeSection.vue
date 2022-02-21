@@ -11,14 +11,20 @@
         <p class="title">{{ $t("welcome.workflowsAutomationPlatform") }}</p>
       </div>
       <div class="welcome-section__desc">
-        <h1>{{ $t("welcome.title") }}</h1>
+        <h1>
+          {{ $t("welcome.title") }}...
+          <span>{{ $t("welcome.subTitle") }}</span>
+        </h1>
+
         <p>
           <q>
             {{ $t("welcome.description") }}
           </q>
         </p>
       </div>
-      <div class="welcome-section_illustrator"></div>
+      <div class="welcome-section_illustrator">
+        <img src="@/assets/img/png/community.png" alt="section_illustrator" />
+      </div>
     </div>
   </div>
 </template>
@@ -68,9 +74,8 @@
     .title {
       font-size: 1.5rem;
       font-weight: 600;
-      margin-top: 1rem;
+      margin-top: 2rem;
     }
-    padding: 30px;
     padding-bottom: 0;
     @include flex-center;
     flex-direction: column;
@@ -81,22 +86,24 @@
     text-align: center;
   }
   .welcome-section__content {
-    width: 52%;
-    margin: auto;
     text-align: justify;
     display: flex;
     align-items: center;
     flex-direction: column;
     height: 100%;
-    gap: 1rem;
-
+    padding: 1.5rem;
     .welcome-section__desc {
       text-align: center;
+      margin-top: 2rem;
       h1 {
         margin-bottom: 1.25rem;
         font-weight: 500;
         font-size: 1.5rem;
         margin-top: 1rem;
+        span {
+          display: block;
+          margin-top: 0.75rem;
+        }
       }
       p {
         font-weight: 600;
@@ -104,6 +111,7 @@
         letter-spacing: 0px;
         color: $grey3;
         text-align: center;
+        max-width: 926px;
       }
     }
   }
@@ -112,16 +120,12 @@
       font-size: 2rem !important;
     }
     .welcome-section__content {
-      gap: 3rem;
-      padding-top: 1rem;
+      padding-top: 3rem;
     }
   }
 }
 .welcome-section_illustrator {
-  background-image: url("@/assets/img/png/community.png");
-  width: 17rem;
-  height: 18rem;
-  background-repeat: no-repeat;
+  margin-top: auto;
 }
 @media screen and (max-width: $lg) {
   .welcome-section {
@@ -133,9 +137,7 @@
     .hexagone {
       display: none;
     }
-    img {
-      max-width: 70%;
-    }
+
     .welcome-section__header {
       @include small-text;
       img {
@@ -143,19 +145,13 @@
       }
     }
     .welcome-section__content {
-      width: 90%;
-
       p {
         @include small-text;
-      }
-
-      span {
-        @include x-small-text;
       }
     }
   }
   .welcome-section_illustrator {
-    transform: scale(0.5);
+    transform: scale(0.75);
   }
 }
 </style>
