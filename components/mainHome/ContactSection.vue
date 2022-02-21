@@ -112,8 +112,7 @@ const handleSubmit = async () => {
 const submitForm = (event) => {
   event.preventDefault();
   //Name Validation
-  const regName = /^[a-zA-Z]+$/;
-  if (!regName.test(formValue.value.name)) {
+  if (formValue.value.name.length < 1) {
     checkInput.value.isNameValid = true;
   } else checkInput.value.isNameValid = false;
   //mailAddress Validation
@@ -123,12 +122,12 @@ const submitForm = (event) => {
     checkInput.value.isEmailValid = true;
   } else checkInput.value.isEmailValid = false;
   //Subject Validation
-  if (formValue.value.subject.length < 4) {
+  if (formValue.value.subject.length < 1) {
     checkInput.value.isSubjectValid = true;
   } else checkInput.value.isSubjectValid = false;
 
   //message Validation
-  if (formValue.value.message.length < 2) {
+  if (formValue.value.message.length < 1) {
     checkInput.value.isMessageValid = true;
   } else checkInput.value.isMessageValid = false;
 
