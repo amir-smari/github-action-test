@@ -19,9 +19,14 @@
       data-aos-duration="1000"
       v-if="$i18n.locale == 'en'"
     />
-    <button class="primary__btn" @click="openMindmapInNewTab">
+    <a
+      class="primary__btn"
+      :href="`https://admin.devfactory.ai/#/mindmap-demo?lang=${$i18n.locale}`"
+      target="_blank"
+    >
       {{ $t("mindMap.createWebApp") }}
-    </button>
+    </a>
+
     <ModalComponent v-show="showModal" @close-modal="closeModal">
       <iframe
         allowfullscreen
@@ -50,9 +55,6 @@ const openModal = () => {
 const closeModal = () => {
   showModal.value = false;
   src.value = "";
-};
-const openMindmapInNewTab = () => {
-  window.open("https://admin.devfactory.ai/#/mindmap-demo");
 };
 </script>
 <style lang="scss" scoped>
