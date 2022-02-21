@@ -35,9 +35,11 @@ export default async (req: IncomingMessage, res: ServerResponse) => {
     };
     transporter.sendMail(mailOptions, (err: any, data: any) => {
       if (err) {
+        res.statusCode = 500
         return console.log("Error occurs", err);
       }
-      return console.log("Email sent!!!");
+      res.statusCode = 200
+      return "Email sent!!!";
     });
   } else {
     res.statusCode = 400;
