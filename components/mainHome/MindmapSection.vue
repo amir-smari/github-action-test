@@ -9,10 +9,27 @@
       data-aos="fade-up"
       data-aos-easing="linear"
       data-aos-duration="1000"
+      v-if="$i18n.locale == 'fr'"
     />
-    <button class="primary__btn" @click="openMindmapInNewTab">{{ $t("mindMap.createWebApp") }}</button>
+    <img
+      src="assets/img/png/mindmap-en.png"
+      alt="mindmap"
+      data-aos="fade-up"
+      data-aos-easing="linear"
+      data-aos-duration="1000"
+      v-if="$i18n.locale == 'en'"
+    />
+    <button class="primary__btn" @click="openMindmapInNewTab">
+      {{ $t("mindMap.createWebApp") }}
+    </button>
     <ModalComponent v-show="showModal" @close-modal="closeModal">
-      <iframe allowfullscreen :src="src" frameborder="0" width="100%" height="100%"></iframe>
+      <iframe
+        allowfullscreen
+        :src="src"
+        frameborder="0"
+        width="100%"
+        height="100%"
+      ></iframe>
     </ModalComponent>
   </div>
 </template>
@@ -35,8 +52,8 @@ const closeModal = () => {
   src.value = "";
 };
 const openMindmapInNewTab = () => {
- window.open('https://admin.devfactory.ai/#/mindmap-demo') 
-}
+  window.open("https://admin.devfactory.ai/#/mindmap-demo");
+};
 </script>
 <style lang="scss" scoped>
 .mindmap-section {
