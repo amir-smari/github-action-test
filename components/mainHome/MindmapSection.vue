@@ -84,7 +84,6 @@ const closeModal = () => {
   }
 }
 .primary__btn {
-  padding: 10px;
   @include btn;
   @include btn-font;
   background: $primary;
@@ -92,7 +91,8 @@ const closeModal = () => {
   margin: auto;
   padding: 0.5rem 1rem;
   font-weight: 600;
-
+  width: fit-content;
+  text-decoration: none;
   &:hover {
     background: darken($primary, 10%);
   }
