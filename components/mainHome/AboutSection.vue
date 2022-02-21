@@ -54,7 +54,11 @@
           {{ $t("about.generatorApi") }}
         </div>
         <div class="viewer_wrapper">
-          <div v-viewer="options" class="images images_wrapper" ref="images">
+          <div
+            v-viewer="options"
+            class="images images_wrapper"
+            ref="imagesRight"
+          >
             <img
               src="@/assets/img/png/figma/generateur.png"
               alt="overview"
@@ -75,7 +79,7 @@
             src="@/assets/img/svg/view.svg"
             alt="view image"
             class="view-icon"
-            @click="show"
+            @click="showViewer('RIGHT_IMG')"
           />
         </div>
       </div>
@@ -103,7 +107,7 @@
             src="@/assets/img/svg/view.svg"
             alt="view image"
             class="view-icon"
-            @click="show"
+            @click="showViewer('LEFT_IMG')"
           />
         </div>
 
@@ -119,6 +123,7 @@
 import { ref } from "vue";
 import ModalComponent from "@/components/shared/ModalComponent.vue";
 const images = ref<any>();
+const imagesRight = ref<any>();
 const options = ref({
   toolbar: true,
   title: false,
@@ -136,9 +141,20 @@ const closeModal = () => {
   showModal.value = false;
   src.value = "";
 };
-const show = () => {
-  const viewer = images.value.$viewer;
-  viewer.show();
+
+const showViewer = (type: String) => {
+  switch (type) {
+    case "RIGHT_IMG":
+      const viewerRight = imagesRight.value.$viewer;
+      viewerRight.show();
+      break;
+    case "LEFT_IMG":
+      const viewerLeft = images.value.$viewer;
+      viewerLeft.show();
+      break;
+    default:
+      break;
+  }
 };
 </script>
 
