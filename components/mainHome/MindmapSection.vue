@@ -19,9 +19,14 @@
       data-aos-duration="1000"
       v-if="$i18n.locale == 'en'"
     />
-    <button class="primary__btn" @click="openMindmapInNewTab">
+    <a
+      class="primary__btn"
+      :href="`https://admin.devfactory.ai/#/mindmap-demo?lang=${$i18n.locale}`"
+      target="_blank"
+    >
       {{ $t("mindMap.createWebApp") }}
-    </button>
+    </a>
+
     <ModalComponent v-show="showModal" @close-modal="closeModal">
       <iframe
         allowfullscreen
@@ -51,9 +56,6 @@ const closeModal = () => {
   showModal.value = false;
   src.value = "";
 };
-const openMindmapInNewTab = () => {
-  window.open("https://admin.devfactory.ai/#/mindmap-demo");
-};
 </script>
 <style lang="scss" scoped>
 .mindmap-section {
@@ -82,7 +84,6 @@ const openMindmapInNewTab = () => {
   }
 }
 .primary__btn {
-  padding: 10px;
   @include btn;
   @include btn-font;
   background: $primary;
@@ -90,7 +91,8 @@ const openMindmapInNewTab = () => {
   margin: auto;
   padding: 0.5rem 1rem;
   font-weight: 600;
-
+  width: fit-content;
+  text-decoration: none;
   &:hover {
     background: darken($primary, 10%);
   }
