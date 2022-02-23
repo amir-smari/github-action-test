@@ -13,6 +13,7 @@
   "devDependencies": {
     "@babel/eslint-parser": "^7.16.5",
     "@nuxtjs/eslint-config-typescript": "^8.0.0",
+    "@types/nodemailer": "^6.4.4",
     "@typescript-eslint/eslint-plugin": "^5.10.2",
     "@typescript-eslint/parser": "^5.10.2",
     "@vue/cli-plugin-eslint": "^4.5.15",
@@ -33,7 +34,7 @@
     "nodemailer": "^6.7.2",
     "sass": "^1.49.0",
     "sass-loader": "^12.4.0",
-    "vue3-lottie": "^1.4.0",
-    "v-viewer": "^3.0.10"
+    "v-viewer": "^3.0.10",
+    "vue3-lottie": "^1.4.0"
   }
 }
