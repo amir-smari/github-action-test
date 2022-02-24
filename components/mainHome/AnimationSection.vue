@@ -9,9 +9,15 @@
       @click="showModal = true"
     />
     <ModalComponent v-show="showModal" @close-modal="closeModal" :fit="true">
-      <video controls height="400px" autoplay muted>
-        <source src="assets/videos/demo.mp4" type="video/mp4" />
-      </video>
+      <iframe
+        width="1280"
+        height="720"
+        src="https://www.youtube.com/embed/GrymbJRJ4CY"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
     </ModalComponent>
   </div>
 </template>
