@@ -45,7 +45,7 @@ let checkInput = ref({
 const formValue = ref({
   email: "",
 });
-const handelRegisterBtn = (event) => {
+const handelRegisterBtn = async (event) => {
   event.preventDefault();
   //mailAddress Validation
   const regEmail =
@@ -55,6 +55,10 @@ const handelRegisterBtn = (event) => {
   } else checkInput.value.isEmailValid = false;
   if (!checkInput.value.isEmailValid) {
     console.log("submited");
+    await $fetch(`/api/register`, {
+      method: "POST",
+      body: { form: formValue.value },
+    }) ;
     formValue.value.email = "";
   }
 };
