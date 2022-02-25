@@ -2,6 +2,7 @@ import type { IncomingMessage, ServerResponse } from "http";
 import { useBody } from "h3";
 import { SendMailOptions } from "nodemailer";
 import { transporter } from "~/utils/mail";
+import config from "#config";
 
 export default async (req: IncomingMessage, res: ServerResponse) => {
   const { form } = await useBody(req);
@@ -12,8 +13,8 @@ export default async (req: IncomingMessage, res: ServerResponse) => {
   }
 
   const notifyAdminMail: SendMailOptions = {
-    from: process.env.SMTP_ADMIN_EMAIL,
-    to: process.env.CONTACT_FORM_SEND_TO?.split(','),
+    from: config.SMTP_ADMIN_EMAIL,
+    to: config.CONTACT_FORM_SEND_TO?.split(','),
     subject: "Dev Factory Landing page register Form",
     html: `<p>${Object.keys(form).map(
       (key) => `
@@ -22,7 +23,7 @@ export default async (req: IncomingMessage, res: ServerResponse) => {
     )}</p>`,
   };
   const thankUserMail: SendMailOptions = {
-    from: process.env.SMTP_ADMIN_EMAIL,
+    from: config.SMTP_ADMIN_EMAIL,
     to: form.email,
     subject: "Inscription à la liste d’attente pour la version SaaS",
     html: `<p>Bonjour, <br> <br>
@@ -34,12 +35,18 @@ export default async (req: IncomingMessage, res: ServerResponse) => {
      <br> <br>
     <b>L’équipe DevFactory </b>
     </p>`,
-  };  
+  };
+  
+  console.log(config.SMTP_ADMIN_EMAIL);
+  console.log(config.SMTP_HOST);
+  
   try {
     await transporter.sendMail(notifyAdminMail);
     await transporter.sendMail(thankUserMail);
     return "mail sent";
   } catch (error) {
+    console.log(error);
+    
     res.statusCode = 500;
     return "An error occurred";
   }

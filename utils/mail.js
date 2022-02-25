@@ -1,12 +1,13 @@
 import { createTransport } from "nodemailer";
+import config from '#config';
 
 export const transporter = createTransport({
-    host: String(process.env.SMTP_HOST),
-    port: Number(process.env.SMTP_PORT),
+    host: String(config.SMTP_HOST),
+    port: Number(config.SMTP_PORT),
     secure: true, // true for 465, false for other ports
     debug: false,
     auth: {
-      user: String(process.env.SMTP_USER),
-      pass: String(process.env.SMTP_PASS),
+      user: String(config.SMTP_USER),
+      pass: String(config.SMTP_PASS),
     },
   });

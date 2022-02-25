@@ -1,3 +1,4 @@
+import config from '#config';
 import { transporter } from '~/utils/mail';
 import type { IncomingMessage, ServerResponse } from "http";
 import { useBody } from "h3";
@@ -10,10 +11,10 @@ export default async (req: IncomingMessage, res: ServerResponse) => {
     res.statusCode = 400;
     return "Invalid request Body";
   }
-  
+
   const mailOptions: SendMailOptions = {
-    from: process.env.SMTP_ADMIN_EMAIL,
-    to: process.env.CONTACT_FORM_SEND_TO?.split(','),
+    from: config.SMTP_ADMIN_EMAIL,
+    to: config.CONTACT_FORM_SEND_TO?.split(','),
     subject: "Dev Factory Landing page contact Form",
     html: `<p>${Object.keys(form).map(
       (key) => `
@@ -23,7 +24,7 @@ export default async (req: IncomingMessage, res: ServerResponse) => {
   };
 
   const thankUserMail: SendMailOptions = {
-    from: process.env.SMTP_ADMIN_EMAIL,
+    from: config.SMTP_ADMIN_EMAIL,
     to: form.email,
     subject: "Formulaire de contact DevFactory",
     html: `<p>Bonjour, <br> <br>
@@ -42,6 +43,7 @@ export default async (req: IncomingMessage, res: ServerResponse) => {
     await transporter.sendMail(thankUserMail);
     return "mail sent";
   } catch (error) {
+    console.log(error);
     res.statusCode = 500;
     return "An error occurred";
   }
