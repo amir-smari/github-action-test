@@ -13,7 +13,7 @@ export default async (req: IncomingMessage, res: ServerResponse) => {
   
   const mailOptions: SendMailOptions = {
     from: process.env.SMTP_ADMIN_EMAIL,
-    to: process.env.CONTACT_FORM_SEND_TO,
+    to: process.env.CONTACT_FORM_SEND_TO?.split(','),
     subject: "Dev Factory Landing page contact Form",
     html: `<p>${Object.keys(form).map(
       (key) => `
@@ -21,8 +21,25 @@ export default async (req: IncomingMessage, res: ServerResponse) => {
       `
     )}</p>`,
   };
+
+  const thankUserMail: SendMailOptions = {
+    from: process.env.SMTP_ADMIN_EMAIL,
+    to: form.email,
+    subject: "Formulaire de contact DevFactory",
+    html: `<p>Bonjour, <br> <br>
+
+    Nous avons bien reçu votre message et nous vous remercions de l’intérêt que vous portez à DevFactory. <br>
+    Un consultant va prendre contact avec vous très rapidement.<br><br>
+
+    Bien cordialement
+
+     <br> <br>
+    <b>L’équipe DevFactory </b>
+    </p>`,
+  };
   try {
     await transporter.sendMail(mailOptions);
+    await transporter.sendMail(thankUserMail);
     return "mail sent";
   } catch (error) {
     res.statusCode = 500;
