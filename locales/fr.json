@@ -3,7 +3,7 @@
   "welcome": {
     "workflowsAutomationPlatform": "Plateforme d'automatisation des workflows",
     "title": "Programmez autrement",
-    "subTitle":"Développez plus rapidement",
+    "subTitle": "Développez plus rapidement",
     "description": "500 fonctionnalités font aujourd’hui 80% de tous les développements informatiques. Il est donc possible de proposer des solutions d’automatisation qui feront gagner un temps considérable aux développeurs"
   },
   "register": {
@@ -34,7 +34,7 @@
   },
   "banner": {
     "lackOfResources": "Un manque de ressources pour développer",
-    "technicalHazard": "Aléas techniques sur votre projet",
+    "technicalHazard": "Des aléas techniques sur votre projet",
     "description": "Accélérez vos développements : Bénéficiez de la puissance de la plateforme DevFactory, de ressources dédiées et de notre expertise en nouvelles technologies",
     "discoverTheOffer": "Découvrir l'offre",
     "businessCase": "Voir le Business case"
