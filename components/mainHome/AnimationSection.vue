@@ -8,16 +8,18 @@
       v-if="windowTop > 200"
       @click="showModal = true"
     />
-    <ModalComponent v-show="showModal" @close-modal="closeModal" :fit="true">
-      <iframe
-        width="1280"
-        height="720"
-        src="https://www.youtube.com/embed/GrymbJRJ4CY"
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
+    <ModalComponent v-if="showModal" @close-modal="closeModal" :fit="true">
+      <div class="video-container">
+        <iframe
+          width="100%"
+          height="720"
+          src="https://www.youtube.com/embed/GrymbJRJ4CY"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
     </ModalComponent>
   </div>
 </template>
@@ -88,5 +90,34 @@ export default {
   @media screen and (min-width: 992px) {
     height: 600px;
   }
+}
+// .iframe-container {
+//   position: relative;
+//   width: 100%;
+//   padding-bottom: 56.25%;
+//   height: 0;
+//   iframe {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//   }
+// }
+.video-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.video-container::after {
+  padding-top: 56.25%;
+  display: block;
+  content: "";
+}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 </style>
