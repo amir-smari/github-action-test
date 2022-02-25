@@ -37,7 +37,6 @@
   transform: translate(-50%, -50%);
 }
 .fit-content {
-  width: fit-content;
   height: fit-content;
 }
 </style>
