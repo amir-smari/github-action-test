@@ -66,7 +66,7 @@
         </div>
         <div class="info__property">
           <span class="info__key">{{ $t("contact.visitOurWebsite") }}</span>
-          <a href="www.sastec-group.com" target="_blank">
+          <a href="//www.sastec-group.com" target="_blank">
             <span class="info__value">www.sastec-group.com</span>
           </a>
         </div>
