@@ -27,4 +27,4 @@ jobs:
 
       - name: exposure the environment after checkout 
         run: | 
-          ls  
+          ls -a
