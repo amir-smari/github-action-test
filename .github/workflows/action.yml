@@ -14,4 +14,10 @@ jobs:
           who-to-greet: Amir 
 
       - name: log greeeting time 
-        run: echo "${{ steps.teest.outputs.time }}"     
+        run: echo "${{ steps.teest.outputs.time }}" 
+
+      - name: explosure the envirnoment 
+        run: | 
+          whoami 
+          pwd 
+          ls -la      
