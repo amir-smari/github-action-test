@@ -14,4 +14,4 @@ jobs:
           who-to-greet: Amir 
 
       - name: log greeeting time 
-        run: echo "${{ steps. }}"     
+        run: echo "${{ steps.teest.outputs.time }}"     
