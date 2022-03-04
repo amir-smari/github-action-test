@@ -1,0 +1,17 @@
+name: Action Workflows 
+
+on: [push] 
+
+jobs: 
+  run-github-action:  
+    runs-on: ubuntu-latest 
+    steps:
+      - name: simple JS action
+        id: teest 
+        #we can use an action that is publied on a github repository
+        uses: actions/hello-world-javascript-action@v1   #we can reference the version , commit id or branch name
+        with:
+          who-to-greet: Amir 
+
+      - name: log greeeting time 
+        run: echo "${{ steps. }}"     
