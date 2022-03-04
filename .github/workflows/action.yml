@@ -11,7 +11,7 @@ jobs:
         #we can use an action that is publied on a github repository
         uses: actions/hello-world-javascript-action@v1   #we can reference the version , commit id or branch name
         with:
-          who-to-greet: Amir 
+          who-to-greet: github-action-tests
 
       - name: log greeeting time 
         run: echo "${{ steps.teest.outputs.time }}" 
@@ -28,3 +28,10 @@ jobs:
       - name: exposure the environment after checkout 
         run: | 
           ls -a
+
+      - name: some Gloabal Envirnoment variables 
+        run: | 
+          echo $GITHUB_SHA 
+          echo $GITHUB_REPOSITORY 
+          echo $GITHUB_WORKSPACE 
+          echo "${{ github.token }}"
