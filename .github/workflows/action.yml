@@ -20,7 +20,7 @@ jobs:
         run: | 
           whoami 
           pwd 
-          ls  
+          ls -a 
       # to clone our ripository using an official action 
       - name: checkout 
         uses: actions/checkout@v1          
