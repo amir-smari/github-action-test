@@ -16,8 +16,15 @@ jobs:
       - name: log greeeting time 
         run: echo "${{ steps.teest.outputs.time }}" 
 
-      - name: explosure the envirnoment 
+      - name: exposure the envirnoment before checkout 
         run: | 
           whoami 
           pwd 
-          ls -la      
+          ls  
+      # to clone our ripository using an official action 
+      - name: checkout 
+        uses: actions/checkout@v1          
+
+      - name: exposure the environment after checkout 
+        run: | 
+          ls  
