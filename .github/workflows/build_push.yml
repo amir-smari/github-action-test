@@ -1,0 +1,39 @@
+name: Node CI
+
+on: [push]
+
+env: 
+  REPO_NAME: ...
+
+  push:  
+    branches: 
+      - develop 
+jobs:
+  build: 
+    runs-on: ubuntu-20.04 
+
+    strategy:
+      matrix: 
+        node-version: [14.17.0] 
+    steps: 
+      - uses: actions/checkout@v1 
+      - name: Use Node.js ${{ matrix.node-version }} 
+        uses: actions/setup-node@v1 
+        with: 
+          node-version: ${{ matrix.node-version }} 
+      
+      # uncomment this if there is no Test applied for dev-factory
+      - name: Test the Testcases 
+        run: | 
+          yarn install 
+          yarn build --if-present 
+          npm test 
+
+      - name: Login to Docker Hub   
+        run:  docker login --username "${{ secrets.Docker_username }}" --password "${{ secrets.Docker_password }}"  
+
+      - name: build the docker image 
+        run: docker build --tag ${REPO_NAME}:${GITHUB_REF} -f Dockerfile.dev .
+
+      - name: push the docker image
+        run: docker push ${REPO_NAME}:${GITHUB_REF}   
