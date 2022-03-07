@@ -1,24 +1,59 @@
-FROM node:14.17.3-alpine3.14
+# FROM node:14.17.3-alpine3.14
 
+FROM node:14.17.3
+
+
+USER node 
+
+# Create app directory (with user `node`)
+RUN mkdir -p /home/node/app
 # create destination directory
-WORKDIR /app
-# update and install dependency
-RUN apk update && apk upgrade
-RUN apk add git
+WORKDIR /home/node/app
 
 # copy the package.json, yarn.lock
-COPY package.json yarn.lock ./
-# copy the app, note .dockerignore
-COPY . /app/
-RUN yarn install
+COPY --chown=node:node package.json yarn.lock ./
 
-# expose 5000 on container
-EXPOSE 3000
+RUN yarn install 
+
+COPY --chown=node:node . .
+
 
 # set app serving to permissive / assigned
 ENV NUXT_HOST=0.0.0.0
 # set app port
 ENV NUXT_PORT=3000
 
+
+EXPOSE ${NUXT_PORT}
+
 # start the app
-CMD [ "yarn", "dev" ]
+CMD [ "yarn", "dev" ] 
+
+
+# docker run --name tekab -p 3000:3000 -v /home/node/app/node_modules -v $(pwd):/home/node/app tekab:v4 
+
+# -----------------------------------------------------------------
+# FROM node:14.17.3-alpine3.14
+
+# # create destination directory
+# WORKDIR /app
+# # update and install dependency
+# RUN apk update && apk upgrade
+# RUN apk add git
+
+# # copy the package.json, yarn.lock
+# COPY package.json yarn.lock ./
+# # copy the app, note .dockerignore
+# COPY . /app/
+# RUN yarn install
+
+# # expose 5000 on container
+# EXPOSE 3000
+
+# # set app serving to permissive / assigned
+# ENV NUXT_HOST=0.0.0.0
+# # set app port
+# ENV NUXT_PORT=3000
+
+# # start the app
+# CMD [ "yarn", "dev" ]
