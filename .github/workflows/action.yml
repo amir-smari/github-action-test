@@ -16,7 +16,7 @@ jobs:
       - name: log greeeting time 
         run: echo "${{ steps.teest.outputs.time }}" 
 
-      - name: exposure the envirnoment before checkout 
+      - name: exposure the envirnomeent before checkout 
         run: | 
           whoami 
           pwd 
