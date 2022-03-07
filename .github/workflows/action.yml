@@ -1,9 +1,17 @@
 name: Action Workflows 
 
 on: 
+  # push: 
+  # pull_request:
+  #   types: [closed, assigned, opened, reopened] 
   push: 
-  pull_request:
-    types: [closed, assigned, opened, reopened]
+    branches:    #we can also have branches-ignore
+      - master 
+      - 'feat/**' 
+
+    tags: 
+      - v1.*  
+    
 
 jobs: 
   run-github-action:  
@@ -34,7 +42,10 @@ jobs:
 
       - name: some Gloabal Envirnoment variables 
         run: | 
+          # the commit id
           echo $GITHUB_SHA 
           echo $GITHUB_REPOSITORY 
           echo $GITHUB_WORKSPACE 
-          echo "${{ github.token }}"
+          echo "${{ github.token }}" 
+          # just the branch that we are working on it
+          echo $GITHUB_REF           
