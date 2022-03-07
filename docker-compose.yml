@@ -3,7 +3,7 @@ services:
   app-prod:
     container_name: devfactory-website-fo-prod
     profiles: ["prod"]
-    user: ${GROUP_ID}:${USER_ID}
+    # user: ${GROUP_ID}:${USER_ID}
     build:
       context: .
       dockerfile: docker/Dockerfile.prod
@@ -12,7 +12,7 @@ services:
   app-dev:
     container_name: devfactory-website-fo-dev
     profiles: ["dev"]
-    user: ${GROUP_ID}:${USER_ID}
+    # user: ${GROUP_ID}:${USER_ID}
     build:
       context: .
       dockerfile: docker/Dockerfile.dev
