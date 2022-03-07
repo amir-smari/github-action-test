@@ -7,6 +7,8 @@ services:
     build:
       context: .
       dockerfile: docker/Dockerfile.prod
+      # args:
+      #   - SMTP_ADMIN_EMAIL=secret@secret.tn     
     ports:
       - 82:3000
   app-dev:
@@ -15,7 +17,7 @@ services:
     # user: ${GROUP_ID}:${USER_ID}
     build:
       context: .
-      dockerfile: docker/Dockerfile.dev
+      dockerfile: docker/Dockerfile.dev     
     volumes:
       - ./:/home/node/app
       - /home/node/app/node_modules
