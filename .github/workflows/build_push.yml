@@ -7,7 +7,7 @@ on:
       - develop 
 
 env: 
-  REPO_NAME: amirsmari
+  REPO_NAME: amirsmari/tekab
 
 
 jobs:
@@ -36,6 +36,9 @@ jobs:
 
       - name: build the docker image 
         run: docker build --tag ${REPO_NAME}:${GITHUB_REF_NAME} -f Dockerfile.dev .
+
+      - name: check  the images if exist 
+        run: docker images  
 
       - name: push the docker image
         run: docker push ${REPO_NAME}:${GITHUB_REF_NAME}   
