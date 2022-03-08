@@ -1,13 +1,15 @@
 name: Node CI
 
-on: [push]
-
-env: 
-  REPO_NAME: amirsmari
+on: 
 
   push:  
     branches: 
       - develop 
+
+env: 
+  REPO_NAME: amirsmari
+
+
 jobs:
   build: 
     runs-on: ubuntu-20.04 
